@@ -7,13 +7,13 @@ LeidersRP es una plataforma de juego de rol (Roleplay) que ofrece una experienci
 ## Características principales
 
 - **PDA Roleplay Consola:** Accede a la consola PDA para realizar una variedad de funciones útiles y gestionar tus actividades en el juego.
-  - [PDA Roleplay Consola](https://byruby12.github.io/LeidersRP-PDA/PDA-LeidersRP/)
+  - [PDA Roleplay Consola](https://byruby12.github.io/LeidersRP/PDA-LeidersRP/)
 
 - **DNI Roleplay Consola:** Utiliza la consola de DNI para gestionar tu identidad en el juego y acceder a información importante.
-  - [DNI Roleplay Consola](https://byruby12.github.io/LeidersRP-DNI/DNI-LeidersRP/)
+  - [DNI Roleplay Consola](https://byruby12.github.io/LeidersRP/DNI-LeidersRP/)
 
 - **STAFF Roleplay Consola:** Accede a la consola de STAFF para realizar funciones administrativas y gestionar el juego.
-  - [STAFF Roleplay Consola](https://byruby12.github.io/LeidersRP-STAFF/STAFF-LeidersRP/)
+  - [STAFF Roleplay Consola](https://byruby12.github.io/LeidersRP/STAFF-LeidersRP/)
 
 ## Instrucciones de uso
 
