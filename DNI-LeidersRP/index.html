@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeidersRP</title>
+    <link rel="stylesheet" type="text/css" href="estilos/styles.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>DNI DE LEIDERS RP</h1>
+        
+        <!-- Resumen o instrucciones -->
+        <div class="instructions">
+            <h2>Instrucciones:</h2>
+            <p>Bienvenido a LeidersRP. Por favor, sigue estas instrucciones detalladamente:</p>
+            <ol>
+                <li><strong>Pulsa el botón "Crear Nuevo Usuario".</strong></li>
+                <li><strong>Introduce el nombre del usuario de PlayStation cuando se te solicite.</strong></li>
+                <li><strong>Rellena cuidadosamente todos los campos requeridos:</strong></li>
+                <ul>
+                    <li>➦ ID de PlayStation</li>
+                    <li>➦ ID de Discord</li>
+                    <li>➦ Nombre</li>
+                    <li>➦ Apellido</li>
+                    <li>➥ Sexo</li>
+                    <li>➥ Nacionalidad</li>
+                    <li>➥ Fecha de Nacimiento</li>
+                    <li>➥ Trabajo</li>
+                </ul>
+                <li><strong>Haz clic en el botón "Enviar" para agregar el usuario y los datos.</strong></li>
+            </ol>
+            <p>Una vez completados todos los pasos, recibirás una notificación confirmando que el usuario y los datos se han agregado correctamente. Si encuentras alguna dificultad durante este proceso, te instamos a contactar a la administración para recibir asistencia. Nuestro equipo estará encantado de ayudarte.</p>
+        </div>
+          
+        
+        <!-- Botón para crear nuevo usuario -->
+        <div class="boton-crear-zona">
+            <button id="addZoneBtn" class="create-zone-btn">Crear Nuevo Usuario</button>
+        </div>
+    </div>
+
+    <div class="modal-container">
+        
+    </div>
+
+    <script type="module" src="firebase/firebase.js"></script>
+    <script type="module" src="controlador/main.js"></script>
+</body>
+</html>

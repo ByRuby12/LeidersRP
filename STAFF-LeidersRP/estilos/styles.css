@@ -1,0 +1,344 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('../img/cnp-leiders.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #999999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow-y: auto; /* Activar desplazamiento vertical */
+    max-height: 1020px; /* Altura máxima del contenedor con desplazamiento */
+}
+
+h1 {
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/*--------------------------------ZONA CONTENEDOR----------------------------------*/
+
+/* Estilos para el contenedor de zona */
+.zone {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #1d00ac;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zone-header {
+    display: flex;
+    align-items: center;
+}
+
+.zone-name {
+    flex: 1; 
+    font-size: 25px; 
+    font-weight: bold; 
+    margin-right: 20px; 
+}
+
+.edit-zone-btn {
+    width: 60px; 
+    height: 60px; 
+}
+
+/* Efecto de elevación al hacer hover en el contenedor de zona */
+.zone:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el encabezado de zona */
+.zone-header {
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto de sombra al hacer hover */
+.zone-header:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/*------------------------------DATOS-----------------------------------*/
+
+/* Estilos para el contenedor de datos */
+.data-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+/* Estilos para cada fila de datos */
+.data-container .data-row {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 20px); /* Divide el espacio en 2 columnas */
+    margin-bottom: 10px;
+}
+
+/* Estilos para cada elemento de datos */
+.data-container .data-element {
+    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de elevación al hacer hover en los elementos de datos */
+.data-container .data-element:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*------------------------------MULTAS---------------------------------*/
+
+/* Estilos para el contenedor de multas */
+.fines-container {
+    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
+    padding: 10px;
+    background-color: #2b00ff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilos para cada tarjeta de multa */
+.fines-container .fine-container {
+    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de tarjeta al hacer hover en las multas */
+.fines-container .fine-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*-------------------------DENUNCIAS-----------------------------*/
+
+/* Estilos para el contenedor de denuncias */
+.complaints-container {
+    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
+    padding: 10px;
+    background-color: #2b00ff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilos para cada tarjeta de denuncia */
+.complaints-container .complaint-container {
+    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de tarjeta al hacer hover en las denuncias */
+.complaints-container .complaint-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*---------------------------NOTAS-------------------------------*/
+
+/* Estilos para el contenedor de notas */
+.notes-container {
+    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
+    padding: 10px;
+    background-color: #2b00ff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilos para cada tarjeta de nota */
+.notes-container .note-container {
+    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de tarjeta al hacer hover en las notas */
+.notes-container .note-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*--------------------------BUSCA Y CAPTURA-------------------------*/
+
+/* Estilos para el contenedor de ejecutores */
+.executors-container {
+    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
+    padding: 10px;
+    background-color: #2b00ff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilos para cada tarjeta de ejecutor */
+.executors-container .executor-container {
+    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de tarjeta al hacer hover en los ejecutores */
+.executors-container .executor-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*------------------------------BOTONES CREAR ZONA--------------------------------*/
+
+/* Estilos específicos para el botón de agregar nueva zona */
+.create-zone-btn {
+    background-color: #00ac11;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.create-zone-btn:hover {
+    background-color: #00863e;
+}
+
+.boton-crear-zona {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 10px; /* Esto es opcional, ajusta la altura según tus necesidades */
+}
+
+/*------------------------------BOTONES ABAJO--------------------------------*/
+
+/* Estilos específicos para los botones de agregar nuevo executor y sensor */
+.add-data-btn,
+.add-note-btn,
+.add-fine-btn,
+.add-complaint-btn,
+.add-executor-btn,
+.modify-zone-name-btn,
+.delete-zone-btn {
+    background-color: #ea9800;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.add-data-btn:hover,
+.add-note-btn:hover,
+.add-fine-btn:hover,
+.add-complaint-btn:hover,
+.add-executor-btn:hover,
+.modify-zone-name-btn:hover,
+.delete-zone-btn:hover {
+    background-color: #FFD700;
+}
+
+/*------------------------------BOTONES ARRIBA--------------------------------*/
+
+/* Estilos para los botones de modificar */
+.modify-sensor-btn,
+.modify-note-btn,
+.modify-fine-btn,
+.modify-complaint-btn,
+.modify-executor-btn {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modify-sensor-btn:hover,
+.modify-note-btn:hover,
+.modify-fine-btn:hover,
+.modify-complaint-btn:hover,
+.modify-executor-btn:hover {
+    background-color: #ff7f00;
+}
+
+/* Estilos para los botones de borrar */
+.delete-sensor-btn,
+.delete-note-btn,
+.delete-fine-btn,
+.delete-complaint-btn,
+.delete-executor-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-sensor-btn:hover,
+.delete-note-btn:hover,
+.delete-fine-btn:hover,
+.delete-complaint-btn:hover,
+.delete-executor-btn:hover {
+    background-color: #d63031;
+}
+
+/*--------------------------------------------------------------------------*/
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 10px 0;
+}

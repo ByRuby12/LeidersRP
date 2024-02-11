@@ -1,0 +1,141 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('../img/DNI-LEIDERSRP.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #999999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow-y: auto; /* Activar desplazamiento vertical */
+    max-height: 1020px; /* Altura máxima del contenedor con desplazamiento */
+}
+
+h1 {
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 10px 0;
+}
+/*--------------------------------ZONA CONTENEDOR----------------------------------*/
+
+/* Estilos para el contenedor de zona */
+.zone {
+    border: 1px solid #999999;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #1d00ac;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zone-header {
+    display: flex;
+    align-items: center;
+}
+
+.zone-name {
+    flex: 1; 
+    font-size: 25px; 
+    font-weight: bold; 
+    margin-right: 20px; 
+}
+
+.edit-zone-btn {
+    width: 60px; 
+    height: 60px; 
+}
+
+/* Efecto de elevación al hacer hover en el contenedor de zona */
+.zone:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el encabezado de zona */
+.zone-header {
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto de sombra al hacer hover */
+.zone-header:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/*------------------------------BOTONES CREAR ZONA--------------------------------*/
+
+/* Estilos específicos para el botón de agregar nueva zona */
+.create-zone-btn {
+    background-color: #00ac11;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.create-zone-btn:hover {
+    background-color: #00863e;
+}
+
+.boton-crear-zona {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 10px; /* Esto es opcional, ajusta la altura según tus necesidades */
+}
+
+/*------------------------------TEXTOS-------------------------------------*/
+
+/* Estilos para el contenedor de instrucciones */
+.instructions {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los párrafos de las instrucciones */
+.instructions p {
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+/* Estilos para la lista de instrucciones */
+.instructions ul {
+    list-style-type: none;
+    padding: 5px;
+}
+
+/* Estilos para los elementos de la lista de instrucciones */
+.instructions li {
+    margin-bottom: 8px;
+}
+
+/* Estilos para el botón de las instrucciones */
+.instructions button {
+    margin-top: 20px;
+}
