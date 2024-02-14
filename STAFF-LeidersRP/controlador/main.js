@@ -105,10 +105,14 @@ async function loadZones() {
         zoneElement.appendChild(dataContainer);
         
         /*------------------------------------------------------------------------------------*/
-
         // Contenedor para notas
         const notesContainer = document.createElement('div');
         notesContainer.classList.add('notes-container');
+
+        // Título del contenedor de notas
+        const notesTitle = document.createElement('h2');
+        notesTitle.textContent = `NOTAS:`;
+        notesContainer.appendChild(notesTitle);      
 
         for (const noteId in zoneData.notas) {
             const noteContainer = document.createElement('div');
@@ -124,10 +128,14 @@ async function loadZones() {
         zoneElement.appendChild(notesContainer);
 
         /*------------------------------------------------------------------------------------*/
-
         // Contenedor para multas
         const finesContainer = document.createElement('div');
         finesContainer.classList.add('fines-container');
+
+        // Título del contenedor de multas
+        const finesTitle = document.createElement('h2');
+        finesTitle.textContent = `MULTAS:`;
+        finesContainer.appendChild(finesTitle);
 
         for (const fineName in zoneData.multas) {
             const fineContainer = document.createElement('div');
@@ -144,10 +152,14 @@ async function loadZones() {
 
         zoneElement.appendChild(finesContainer);
         /*------------------------------------------------------------------------------------*/
-
         // Contenedor para denuncias
         const complaintsContainer = document.createElement('div');
         complaintsContainer.classList.add('complaints-container');
+
+        // Título del contenedor de denuncias
+        const complaintTitle = document.createElement('h2');
+        complaintTitle.textContent = `DENUNCIAS:`;
+        complaintsContainer.appendChild(complaintTitle);  
 
         for (const complaintName in zoneData.denuncias) {
             const complaintContainer = document.createElement('div');
@@ -165,10 +177,14 @@ async function loadZones() {
         zoneElement.appendChild(complaintsContainer);
 
         /*------------------------------------------------------------------------------------*/
-
         // Contenedor para ejecutores
         const executorsContainer = document.createElement('div');
         executorsContainer.classList.add('executors-container');
+
+        // Título del contenedor de busca y captura
+        const buscaTitle = document.createElement('h2');
+        buscaTitle.textContent = `BUSCA Y CAPTURA:`;
+        executorsContainer.appendChild(buscaTitle);       
 
         for (const executor in zoneData.executors) {
             const executorContainer = document.createElement('div');
@@ -187,54 +203,60 @@ async function loadZones() {
 
         /*------------------------------------------------------------------------------------*/
 
+        // Contenedor para botones
+        const buttonsContainer = document.createElement('div');
+        buttonsContainer.classList.add('buttons-container');        
+
         // Botón para agregar nuevos datos
         const addDataButton = document.createElement('button');
         addDataButton.textContent = 'Crear Datos';
         addDataButton.onclick = () => addNewData(zoneId);
         addDataButton.classList.add('add-data-btn');
-        zoneElement.appendChild(addDataButton);
+        buttonsContainer.appendChild(addDataButton);
 
         // Botón para agregar nueva nota
         const addNoteButton = document.createElement('button');
         addNoteButton.textContent = 'Crear Nota';
         addNoteButton.onclick = () => addNewNote(zoneId);
         addNoteButton.classList.add('add-note-btn');
-        zoneElement.appendChild(addNoteButton);
+        buttonsContainer.appendChild(addNoteButton);
 
         // Botón para agregar nuevas multas
         const addFineButton = document.createElement('button');
         addFineButton.textContent = 'Crear Multa';
         addFineButton.onclick = () => addNewFine(zoneId);
         addFineButton.classList.add('add-fine-btn');
-        zoneElement.appendChild(addFineButton);
+        buttonsContainer.appendChild(addFineButton);
 
         // Botón para agregar nuevas denuncias
         const addComplaintButton = document.createElement('button');
         addComplaintButton.textContent = 'Crear Denuncia';
         addComplaintButton.onclick = () => addNewComplaint(zoneId);
         addComplaintButton.classList.add('add-complaint-btn');
-        zoneElement.appendChild(addComplaintButton);
+        buttonsContainer.appendChild(addComplaintButton);
 
         // Botón para agregar nuevos ejecutores
         const addExecutorButton = document.createElement('button');
         addExecutorButton.textContent = 'Busca y Captura';
         addExecutorButton.onclick = () => addNewExecutor(zoneId);
         addExecutorButton.classList.add('add-executor-btn');
-        zoneElement.appendChild(addExecutorButton);
+        buttonsContainer.appendChild(addExecutorButton);
 
         // Botón para modificar el nombre de la zona
         const modifyZoneNameButton = document.createElement('button');
         modifyZoneNameButton.textContent = 'Modificar Usuario';
         modifyZoneNameButton.onclick = () => modifyZoneName(zoneId, zoneData.name);
         modifyZoneNameButton.classList.add('modify-zone-name-btn');
-        zoneElement.appendChild(modifyZoneNameButton);
+        buttonsContainer.appendChild(modifyZoneNameButton);
 
         // Botón para borrar la zona
         const deleteZoneButton = document.createElement('button');
         deleteZoneButton.textContent = 'Borrar Usuario';
         deleteZoneButton.onclick = () => deleteZone(zoneId);
         deleteZoneButton.classList.add('delete-zone-btn');
-        zoneElement.appendChild(deleteZoneButton);
+        buttonsContainer.appendChild(deleteZoneButton);
+
+        zoneElement.appendChild(buttonsContainer);
 
         zonesContainer.appendChild(zoneElement);
     });
