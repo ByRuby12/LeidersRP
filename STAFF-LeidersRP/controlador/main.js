@@ -105,6 +105,28 @@ async function loadZones() {
         zoneElement.appendChild(dataContainer);
         
         /*------------------------------------------------------------------------------------*/
+        // Contenedor para ejecutores
+        const executorsContainer = document.createElement('div');
+        executorsContainer.classList.add('executors-container');        
+
+        for (const executor in zoneData.executors) {
+            const executorContainer = document.createElement('div');
+            executorContainer.id = `executor-${executor}`;
+            executorContainer.classList.add('executor-container');
+
+            const executorState = zoneData.executors[executor];
+            executorContainer.innerHTML = `
+                <div class="panel-${executorState ? 'si' : 'no'}">
+                    <div class="panel-text">${executorState ? 'ACTIVO - En busca y captura en la ciudad' : 'INACTIVO - No buscado'} </div>
+                </div>
+            `;
+
+            executorsContainer.appendChild(executorContainer);
+        }
+
+        zoneElement.appendChild(executorsContainer);
+        
+        /*------------------------------------------------------------------------------------*/
         // Contenedor para notas
         const notesContainer = document.createElement('div');
         notesContainer.classList.add('notes-container');
@@ -175,33 +197,6 @@ async function loadZones() {
         }
 
         zoneElement.appendChild(complaintsContainer);
-
-        /*------------------------------------------------------------------------------------*/
-        // Contenedor para ejecutores
-        const executorsContainer = document.createElement('div');
-        executorsContainer.classList.add('executors-container');
-
-        // Título del contenedor de busca y captura
-        const buscaTitle = document.createElement('h2');
-        buscaTitle.textContent = `BUSCA Y CAPTURA:`;
-        executorsContainer.appendChild(buscaTitle);          
-
-        for (const executor in zoneData.executors) {
-            const executorContainer = document.createElement('div');
-            executorContainer.id = `executor-${executor}`;
-            executorContainer.classList.add('executor-container');
-
-            const executorState = zoneData.executors[executor];
-            executorContainer.innerHTML = `
-                <div class="panel-${executorState ? 'si' : 'no'}">
-                    <div class="panel-text">${executorState ? 'ACTIVO - En busca y captura en la ciudad' : 'INACTIVO - No buscado'} </div>
-                </div>
-            `;
-
-            executorsContainer.appendChild(executorContainer);
-        }
-
-        zoneElement.appendChild(executorsContainer);
 
         /*------------------------------------------------------------------------------------*/
 
