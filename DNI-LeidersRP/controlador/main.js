@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Verificar las credenciales (aquí podrías hacerlo de manera más segura)
         if (username === 'LEIDERSRP' && password === '1234') {
-            const expiration = Date.now() + (1 * 60 * 60 * 1000); // 1 hora de expiración
+            const expiration = Date.now() + (10 * 60 * 1000); // 10 minutos en milisegundos
             localStorage.setItem('dniCredentials', JSON.stringify({ username, password }));
             localStorage.setItem('expirationTime', expiration.toString());
             
