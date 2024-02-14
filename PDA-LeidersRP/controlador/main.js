@@ -1,4 +1,4 @@
-import { deleteData, getDataCollection, updateData, deleteField } from "../firebase/firebase.js";
+import { getDataCollection, updateData } from "../firebase/firebase.js";
 import { multas } from './multas.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
