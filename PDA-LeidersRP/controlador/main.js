@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const password = prompt('Introduce la contraseña:');
 
         // Verificar las credenciales (aquí podrías hacerlo de manera más segura)
-        if (username === 'cnp' && password === '1234') {
+        if (username === 'cnp' && password === 'superverga') {
             const expiration = Date.now() + (1 * 60 * 60 * 1000); // 1 hora de expiración
             localStorage.setItem('PDACredentials', JSON.stringify({ username, password }));
             localStorage.setItem('expirationTime', expiration.toString());
@@ -234,7 +234,6 @@ async function loadZones() {
                 <div class="panel-${executorState ? 'si' : 'no'}">
                     <div class="panel-text">${executorState ? 'ACTIVO - En busca y captura en la ciudad' : 'INACTIVO - No buscado'} </div>
                 </div>
-                <button onclick="updateExecutor('${zoneId}', '${executor}')" class="modify-sensor-btn">Modificar</button>
             `;
 
             executorsContainer.appendChild(executorContainer);
@@ -287,21 +286,10 @@ async function loadZones() {
 /*-----------------------------BUSCA Y CAPTURA------------------------------------*/
 
 window.addNewExecutor = async function (zoneId) {
-    const activateExecutor = confirm('¿El Ciudadano está en busca y captura?');
+    const activateExecutor = confirm('¿El Ciudadano está en Busca y Captura? (Aceptar: Si y Cancelar: No)');
 
     const updatedData = {
         'executors.BuscaYCaptura': activateExecutor,
-    };
-
-    await updateData(zoneId, 'zones', updatedData);
-    loadZones();
-}
-
-window.updateExecutor = async function (zoneId, executorName) {
-    const activateExecutor = confirm(`¿El Ciudadano está en Busca y Captura? (Aceptar: Si y Cancelar: No)`);
-
-    const updatedData = {
-        [`executors.${executorName}`]: activateExecutor,
     };
 
     await updateData(zoneId, 'zones', updatedData);
