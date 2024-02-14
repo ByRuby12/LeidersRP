@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Verificar las credenciales (aquí podrías hacerlo de manera más segura)
         if (username === 'admin' && password === 'vivaespaña') {
-            const expiration = Date.now() + (1 * 60 * 60 * 1000); // 1 hora de expiración
+            const expiration = Date.now() + (30 * 60 * 1000); // 30 minutos en milisegundos
             localStorage.setItem('staffCredentials', JSON.stringify({ username, password }));
             localStorage.setItem('expirationTime', expiration.toString());
             
@@ -184,16 +184,18 @@ async function loadZones() {
         // Título del contenedor de busca y captura
         const buscaTitle = document.createElement('h2');
         buscaTitle.textContent = `BUSCA Y CAPTURA:`;
-        executorsContainer.appendChild(buscaTitle);       
+        executorsContainer.appendChild(buscaTitle);          
 
         for (const executor in zoneData.executors) {
             const executorContainer = document.createElement('div');
+            executorContainer.id = `executor-${executor}`;
             executorContainer.classList.add('executor-container');
 
+            const executorState = zoneData.executors[executor];
             executorContainer.innerHTML = `
-                <p><b>Busca y Captura:</b> ${zoneData.executors[executor] ? 'SI' : 'NO'}</p>
-                <button onclick="updateExecutor('${zoneId}', '${executor}')" class="modify-sensor-btn">Modificar</button>
-                <button onclick="deleteExecutor('${zoneId}', '${executor}')" class="delete-executor-btn">Borrar</button>
+                <div class="panel-${executorState ? 'si' : 'no'}">
+                    <div class="panel-text">${executorState ? 'ACTIVO - En busca y captura en la ciudad' : 'INACTIVO - No buscado'} </div>
+                </div>
             `;
 
             executorsContainer.appendChild(executorContainer);
@@ -264,24 +266,15 @@ async function loadZones() {
 
 /*-----------------------------ZONA/USUARIO------------------------------------*/
 
-window.deleteZone = async function (zoneId) {
-    const confirmDelete = confirm('¿Seguro que quieres borrar este perfil?');
-    if (confirmDelete) {
-        await deleteData(zoneId, 'zones');
-        loadZones(); 
-    }
-}
+window.addNewExecutor = async function (zoneId) {
+    const activateExecutor = confirm('¿El Ciudadano está en Busca y Captura? (Aceptar: Si y Cancelar: No)');
 
-window.modifyZoneName = async function (zoneId, currentName) {
-    const newZoneName = prompt('Introduce el ID de Discord', currentName);
-    if (newZoneName && newZoneName !== currentName) {
-        const updatedData = {
-            name: newZoneName,
-        };
+    const updatedData = {
+        'executors.BuscaYCaptura': activateExecutor,
+    };
 
-        await updateData(zoneId, 'zones', updatedData);
-        loadZones();
-    }
+    await updateData(zoneId, 'zones', updatedData);
+    loadZones();
 }
 
 /*-----------------------------BUSCA Y CAPTURA------------------------------------*/
