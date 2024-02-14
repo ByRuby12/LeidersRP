@@ -87,7 +87,7 @@ h1 {
     justify-content: space-between;
     margin-bottom: 2px;
     overflow-y: auto; /* Agrega scroll vertical cuando sea necesario */
-    max-height: 300px; /* Establece una altura máxima para el contenedor */
+    max-height: 250px; /* Establece una altura máxima para el contenedor */
 }
 
 /* Estilos para cada fila de datos */
@@ -126,7 +126,7 @@ h1 {
     box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow-y: auto; /* Agrega scroll vertical cuando sea necesario */
-    max-height: 300px; /* Establece una altura máxima para el contenedor */
+    max-height: 250px; /* Establece una altura máxima para el contenedor */
 }
 
 
@@ -169,7 +169,7 @@ h1 {
     box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow-y: auto; /* Agrega scroll vertical cuando sea necesario */
-    max-height: 300px; /* Establece una altura máxima para el contenedor */
+    max-height: 250px; /* Establece una altura máxima para el contenedor */
 }
 
 /* Estilos para cada tarjeta de denuncia */
@@ -212,7 +212,7 @@ h1 {
     box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow-y: auto; /* Agrega scroll vertical cuando sea necesario */
-    max-height: 300px; /* Establece una altura máxima para el contenedor */
+    max-height: 250px; /* Establece una altura máxima para el contenedor */
 }
 
 /* Estilos para cada tarjeta de nota */
