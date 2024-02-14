@@ -1,4 +1,4 @@
-import { saveData, getDataCollection } from "../firebase/firebase.js";
+import { saveData } from "../firebase/firebase.js";
 
 // Variable para controlar si se ha enviado el usuario y datos previamente
 let usuarioEnviado = localStorage.getItem('usuarioEnviado') === 'true';
@@ -11,7 +11,7 @@ async function addNewData() {
         return;
     }
 
-    const zoneName = prompt('Introduce el nombre del usuario de PlayStation:');
+    const zoneName = prompt('Introduce el ID de Discord:');
     if (zoneName) {
         const Playstation = prompt('Introduce el ID de Playstation:');
         const Discord = prompt('Introduce el ID de Discord:'); 
