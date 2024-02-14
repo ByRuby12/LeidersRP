@@ -284,7 +284,7 @@ window.modifyZoneName = async function (zoneId, currentName) {
 /*-----------------------------BUSCA Y CAPTURA------------------------------------*/
 
 window.addNewExecutor = async function (zoneId) {
-    const activateExecutor = confirm('¿El Ciudadano está en busca y captura?');
+    const activateExecutor = confirm('¿El Ciudadano está en Busca y Captura? (Aceptar: Si y Cancelar: No)');
 
     const updatedData = {
         'executors.BuscaYCaptura': activateExecutor,
