@@ -86,6 +86,8 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 2px;
+    overflow-y: auto; /* Agrega scroll vertical cuando sea necesario */
+    max-height: 300px; /* Establece una altura máxima para el contenedor */
 }
 
 /* Estilos para cada fila de datos */
@@ -123,7 +125,10 @@ h1 {
     margin-bottom: 10px;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow-y: auto; /* Agrega scroll vertical cuando sea necesario */
+    max-height: 300px; /* Establece una altura máxima para el contenedor */
 }
+
 
 /* Estilos para cada tarjeta de multa */
 .fines-container .fine-container {
@@ -142,6 +147,16 @@ h1 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+.fines-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 4px 4px 0 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
 /*-------------------------DENUNCIAS-----------------------------*/
 
 /* Estilos para el contenedor de denuncias */
@@ -153,6 +168,8 @@ h1 {
     margin-bottom: 10px;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow-y: auto; /* Agrega scroll vertical cuando sea necesario */
+    max-height: 300px; /* Establece una altura máxima para el contenedor */
 }
 
 /* Estilos para cada tarjeta de denuncia */
@@ -172,6 +189,17 @@ h1 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+.complaints-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 4px 4px 0 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+
 /*---------------------------NOTAS-------------------------------*/
 
 /* Estilos para el contenedor de notas */
@@ -183,6 +211,8 @@ h1 {
     margin-bottom: 10px;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow-y: auto; /* Agrega scroll vertical cuando sea necesario */
+    max-height: 300px; /* Establece una altura máxima para el contenedor */
 }
 
 /* Estilos para cada tarjeta de nota */
@@ -200,6 +230,16 @@ h1 {
 .notes-container .note-container:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.notes-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 4px 4px 0 0;
+    margin: 0;
+    margin-bottom: 10px;
 }
 
 /*--------------------------BUSCA Y CAPTURA-------------------------*/
@@ -232,6 +272,16 @@ h1 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+.executors-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 4px 4px 0 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
 /*------------------------------BOTONES CREAR ZONA--------------------------------*/
 
 /* Estilos específicos para el botón de agregar nueva zona */
@@ -259,33 +309,38 @@ h1 {
 
 /*------------------------------BOTONES ABAJO--------------------------------*/
 
-/* Estilos específicos para los botones de agregar nuevo executor y sensor */
-.add-data-btn,
-.add-note-btn,
-.add-fine-btn,
-.add-complaint-btn,
-.add-executor-btn,
-.modify-zone-name-btn,
-.delete-zone-btn {
-    background-color: #ea9800;
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-right: 10px;
+.buttons-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
 }
 
-.add-data-btn:hover,
-.add-note-btn:hover,
-.add-fine-btn:hover,
-.add-complaint-btn:hover,
-.add-executor-btn:hover,
-.modify-zone-name-btn:hover,
-.delete-zone-btn:hover {
-    background-color: #FFD700;
+.buttons-container .top-buttons,
+.buttons-container .bottom-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
+
+.buttons-container button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons-container button:hover {
+    background-color: #45a049;
+}
+
+
 
 /*------------------------------BOTONES ARRIBA--------------------------------*/
 
@@ -344,7 +399,6 @@ h1 {
     padding: 20px; /* Espaciado interno */
     background-color: #f9f9f9;
     overflow-y: auto; /* Activar desplazamiento vertical */
-    padding: 20px; /* Espaciado interno */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
 }
