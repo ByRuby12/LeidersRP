@@ -238,12 +238,10 @@ h1 {
     margin-bottom: 10px;
 }
 
-
 /*--------------------------BUSCA Y CAPTURA-------------------------*/
 
 /* Estilos para el contenedor de ejecutores */
 .executors-container {
-    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
     padding: 10px;
     background-color: #2b00ff;
     border-radius: 5px;
@@ -252,45 +250,18 @@ h1 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Estilos para cada tarjeta de ejecutor */
-.executors-container .executor-container {
-    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Efecto de tarjeta al hacer hover en los ejecutores */
-.executors-container .executor-container:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.executors-container h2 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #ffffff;
-    padding: 10px;
-    border-radius: 4px 4px 0 0;
-    margin: 0;
-    margin-bottom: 10px;
-}
-
 /*------------------------------------si o no ------------------------------*/
 
 /* Estilo para el contenedor de panel SI */
 .panel-si {
     background-color: #FF5733; /* Verde */
-    color: white;
+    color: black;
 }
 
 /* Estilo para el contenedor de panel NO */
 .panel-no {
     background-color: #4CAF50; /* Rojo */
-    color: white;
+    color: black;
 }
 
 /* Estilos para el texto dentro del panel */
