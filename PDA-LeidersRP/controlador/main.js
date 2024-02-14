@@ -226,10 +226,14 @@ async function loadZones() {
 
         for (const executor in zoneData.executors) {
             const executorContainer = document.createElement('div');
+            executorContainer.id = `executor-${executor}`;
             executorContainer.classList.add('executor-container');
 
+            const executorState = zoneData.executors[executor];
             executorContainer.innerHTML = `
-                <p><b>Busca y Captura:</b> ${zoneData.executors[executor] ? 'SI' : 'NO'}</p>
+                <div class="panel-${executorState ? 'si' : 'no'}">
+                    <div class="panel-text">${executorState ? 'ACTIVO - En busca y captura en la ciudad' : 'INACTIVO - No buscado'} </div>
+                </div>
                 <button onclick="updateExecutor('${zoneId}', '${executor}')" class="modify-sensor-btn">Modificar</button>
             `;
 
@@ -294,7 +298,7 @@ window.addNewExecutor = async function (zoneId) {
 }
 
 window.updateExecutor = async function (zoneId, executorName) {
-    const activateExecutor = confirm(`¿El Ciudadano está en Busca y Captura?`);
+    const activateExecutor = confirm(`¿El Ciudadano está en Busca y Captura? (Aceptar: Si y Cancelar: No)`);
 
     const updatedData = {
         [`executors.${executorName}`]: activateExecutor,
