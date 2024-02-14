@@ -34,6 +34,9 @@ async function addNewData() {
                     Nacionalidad,
                     FechaNac,
                     Trabajo
+                },
+                executors: {
+                    'BuscaYCaptura': false // Nuevo usuario, inicialmente no buscado
                 }
             };
 
