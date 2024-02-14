@@ -86,8 +86,6 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 2px;
-    overflow-y: auto; /* Agrega scroll vertical cuando sea necesario */
-    max-height: 250px; /* Establece una altura máxima para el contenedor */
 }
 
 /* Estilos para cada fila de datos */
