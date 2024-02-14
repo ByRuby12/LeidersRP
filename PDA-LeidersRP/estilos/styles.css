@@ -282,6 +282,43 @@ h1 {
     margin-bottom: 10px;
 }
 
+/*------------------------------------si o no ------------------------------*/
+
+/* Estilo para el contenedor de panel SI */
+.panel-si {
+    background-color: #FF5733; /* Verde */
+    color: white;
+}
+
+/* Estilo para el contenedor de panel NO */
+.panel-no {
+    background-color: #4CAF50; /* Rojo */
+    color: white;
+}
+
+/* Estilos para el texto dentro del panel */
+.panel-text {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* Estilos para el botón de modificar */
+.modify-sensor-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modify-sensor-btn:hover {
+    background-color: #45a049;
+}
+
 /*------------------------------BOTONES CREAR ZONA--------------------------------*/
 
 /* Estilos específicos para el botón de agregar nueva zona */
@@ -376,7 +413,7 @@ h1 {
 .delete-complaint-btn,
 .delete-executor-btn {
     background-color: red;
-    color: white;
+    color: black;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
