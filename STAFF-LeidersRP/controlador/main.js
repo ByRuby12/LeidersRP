@@ -266,15 +266,24 @@ async function loadZones() {
 
 /*-----------------------------ZONA/USUARIO------------------------------------*/
 
-window.addNewExecutor = async function (zoneId) {
-    const activateExecutor = confirm('¿El Ciudadano está en Busca y Captura? (Aceptar: Si y Cancelar: No)');
+window.deleteZone = async function (zoneId) {
+    const confirmDelete = confirm('¿Seguro que quieres borrar este perfil?');
+    if (confirmDelete) {
+        await deleteData(zoneId, 'zones');
+        loadZones(); 
+    }
+}
 
-    const updatedData = {
-        'executors.BuscaYCaptura': activateExecutor,
-    };
+window.modifyZoneName = async function (zoneId, currentName) {
+    const newZoneName = prompt('Introduce el ID de Discord', currentName);
+    if (newZoneName && newZoneName !== currentName) {
+        const updatedData = {
+            name: newZoneName,
+        };
 
-    await updateData(zoneId, 'zones', updatedData);
-    loadZones();
+        await updateData(zoneId, 'zones', updatedData);
+        loadZones();
+    }
 }
 
 /*-----------------------------BUSCA Y CAPTURA------------------------------------*/
@@ -288,25 +297,6 @@ window.addNewExecutor = async function (zoneId) {
 
     await updateData(zoneId, 'zones', updatedData);
     loadZones();
-}
-
-window.updateExecutor = async function (zoneId, executorName) {
-    const activateExecutor = confirm(`¿El Ciudadano está en Busca y Captura?`);
-
-    const updatedData = {
-        [`executors.${executorName}`]: activateExecutor,
-    };
-
-    await updateData(zoneId, 'zones', updatedData);
-    loadZones();
-}
-
-window.deleteExecutor = async function (zoneId, executorName) {
-    const confirmDelete = confirm(`¿Seguro que quieres borrar el ejecutor "${executorName}" de la zona?`);
-    if (confirmDelete) {
-        await deleteField(zoneId, 'zones', `executors.${executorName}`);
-        loadZones();
-    }
 }
 
 /*-----------------------------NOTAS------------------------------------*/
