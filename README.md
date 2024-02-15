@@ -12,9 +12,6 @@ LeidersRP es una plataforma de juego de rol (Roleplay) que ofrece una experienci
 - **DNI Roleplay Consola:** Utiliza la consola de DNI para gestionar tu identidad en el juego y acceder a información importante.
   - [DNI Roleplay Consola](https://byruby12.github.io/LeidersRP/DNI-LeidersRP/)
 
-- **STAFF Roleplay Consola:** Accede a la consola de STAFF para realizar funciones administrativas y gestionar el juego.
-  - [STAFF Roleplay Consola](https://byruby12.github.io/LeidersRP/STAFF-LeidersRP/)
-
 ## Instrucciones de uso
 
 1. Accede al enlace correspondiente a la consola que deseas utilizar.
