@@ -1,10 +1,10 @@
 # LeidersRP
 
-¡Bienvenido a LeidersRP!
+¡Bienvenido a LeidersRP, el servidor de roleplay de consola número 1 en Europa!
 
-LeidersRP es una plataforma de juego de rol (Roleplay) que ofrece una experiencia única y emocionante para los jugadores. Aquí puedes sumergirte en diferentes roles y situaciones, interactuar con otros jugadores y vivir aventuras inolvidables.
+En LeidersRP, encontrarás una experiencia de juego de rol incomparable, llena de aventuras, interacciones y momentos emocionantes. Nuestra plataforma ofrece una amplia gama de funciones y características diseñadas para sumergirte por completo en el mundo del roleplay.
 
-## Características principales
+## ¿Qué encontrarás en LeidersRP?
 
 - **PDA Roleplay Consola:** Accede a la consola PDA para realizar una variedad de funciones útiles y gestionar tus actividades en el juego.
   - [PDA Roleplay Consola](https://byruby12.github.io/LeidersRP/PDA-LeidersRP/)
@@ -12,12 +12,27 @@ LeidersRP es una plataforma de juego de rol (Roleplay) que ofrece una experienci
 - **DNI Roleplay Consola:** Utiliza la consola de DNI para gestionar tu identidad en el juego y acceder a información importante.
   - [DNI Roleplay Consola](https://byruby12.github.io/LeidersRP/DNI-LeidersRP/)
 
-## Instrucciones de uso
+- **USER Roleplay Consola:** Accede a la consola de usuario para gestionar tu perfil y datos personales en el juego.
+  - [USER Roleplay Consola](https://byruby12.github.io/LeidersRP/USER-LeidersRP/)
 
-1. Accede al enlace correspondiente a la consola que deseas utilizar.
-2. Sigue las instrucciones en pantalla para interactuar con la consola y realizar las funciones disponibles.
-3. ¡Disfruta de tu experiencia en LeidersRP y sumérgete en el mundo del juego de rol!
+## Redes Sociales del Creador
 
-Para más detalles y soporte, no dudes en ponerte en contacto con el equipo de administración. ¡Estamos aquí para ayudarte y asegurarnos de que tengas la mejor experiencia de juego posible!
+🔴│ [YOUTUBE (CANAL PRINCIPAL)](https://www.youtube.com/@ByRuby12)  
+🔴│ [YOUTUBE (CANAL SECUNDARIO)](https://youtube.com/@ByRuby12EXTRA)  
+🟠│ [INSTAGRAM](https://instagram.com/ByRuby12)  
+🔵│ [TWITTER](https://twitter.com/byruby12)  
+🟣│ [TWITCH](https://twitch.com/byruby12_official)  
+⚪│ [DISCORD](https://discord.gg/9EYPZFbumE)  
+🔴│ [TIKTOK](http://vm.tiktok.com/byruby12)  
+🟤│ [PÁGINA WEB](https://comunidad-byruby12.jimdosite.com)  
+⚫│ [GITHUB](https://github.com/ByRuby12)  
+💰│ [PAYPAL](https://www.paypal.me/Byruby12)  
+
+## Soporte y Ayuda
+
+Si necesitas ayuda o tienes alguna pregunta, no dudes en contactar con la administración del servidor a través de nuestro servidor de Discord:
+[Servidor de Discord](https://discord.gg/pQsV3UsHEx)
+
+¡Únete a LeidersRP y comienza tu emocionante viaje en el mundo del roleplay!
 
 ¡Que te diviertas en LeidersRP! 🎮✨
