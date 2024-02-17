@@ -55,34 +55,11 @@ async function addNewData() {
 
 // Evento cuando el DOM se ha cargado
 document.addEventListener('DOMContentLoaded', async () => {
-    const storedCredentials = JSON.parse(localStorage.getItem('dniCredentials'));
-    const expirationTime = localStorage.getItem('expirationTime');
+    // Habilitar el botón para agregar una nueva zona
+    document.getElementById('addZoneBtn').addEventListener('click', addNewData);
 
-    if (storedCredentials && expirationTime && Date.now() < parseInt(expirationTime)) {
-        // Habilitar el botón para agregar una nueva zona
-        document.getElementById('addZoneBtn').addEventListener('click', addNewData);
-
-        // Deshabilitar el botón si el usuario ya ha sido enviado previamente
-        if (usuarioEnviado) {
-            document.getElementById('addZoneBtn').disabled = true;
-        }
-
-    } else {
-        // Solicitar usuario y contraseña
-        const username = prompt('Introduce el usuario:');
-        const password = prompt('Introduce la contraseña:');
-
-        // Verificar las credenciales (aquí podrías hacerlo de manera más segura)
-        if (username === 'LeidersRP' && password === '1234') {
-            const expiration = Date.now() + (10 * 60 * 1000); // 10 minutos en milisegundos
-            localStorage.setItem('dniCredentials', JSON.stringify({ username, password }));
-            localStorage.setItem('expirationTime', expiration.toString());
-            
-            // Recargar la página para cargar las multas
-            location.reload();
-
-        } else {
-            alert('Credenciales incorrectas. Por favor, recarga la página e intenta nuevamente.');
-        }
+    // Deshabilitar el botón si el usuario ya ha sido enviado previamente
+    if (usuarioEnviado) {
+        document.getElementById('addZoneBtn').disabled = true;
     }
 });
