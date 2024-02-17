@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeidersRP</title>
+    <link rel="stylesheet" type="text/css" href="estilos/styles.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="search-container">
+            <label for="zoneNameInput">NOMBRE DE USUARIO DISCORD: </label> <br>
+            <input type="text" id="zoneNameInput"> 
+            <button id="searchButton">Buscar</button>
+        </div>
+
+        <div id="zonesContainer"> 
+
+        </div>
+        
+    </div>
+
+    <script type="module" src="firebase/firebase.js"></script>
+    <script type="module" src="controlador/main.js"></script>
+</body>
+</html>
