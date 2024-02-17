@@ -6,16 +6,16 @@ En LeidersRP, encontrarás una experiencia de juego de rol incomparable, llena d
 
 ## ¿Qué encontrarás en LeidersRP?
 
-- **PDA Roleplay Consola:** Accede a la consola PDA para realizar una variedad de funciones útiles y gestionar tus actividades en el juego.
+- **PDA Roleplay Consola:** Accede a la consola PDA para realizar una variedad de funciones útiles y gestionar tus actividades en el juego (Solo acceso para la Policia).
   - [PDA Roleplay Consola](https://byruby12.github.io/LeidersRP/PDA-LeidersRP/)
 
-- **DNI Roleplay Consola:** Utiliza la consola de DNI para gestionar tu identidad en el juego y acceder a información importante.
+- **DNI Roleplay Consola:** Utiliza la consola de DNI para gestionar tu identidad en el juego y acceder a información importante (Acceso a todo el mundo).
   - [DNI Roleplay Consola](https://byruby12.github.io/LeidersRP/DNI-LeidersRP/)
 
-- **USER Roleplay Consola:** Accede a la consola de usuario para gestionar tu perfil y datos personales en el juego.
+- **USER Roleplay Consola:** Accede a la consola de usuario para gestionar tu perfil y datos personales en el juego (Acceso a todo el mundo).
   - [USER Roleplay Consola](https://byruby12.github.io/LeidersRP/USER-LeidersRP/)
 
-## Redes Sociales del Creador
+## Redes Sociales del Creador de esta Plataforma:
 
 🔴│ [YOUTUBE (CANAL PRINCIPAL)](https://www.youtube.com/@ByRuby12)  
 🔴│ [YOUTUBE (CANAL SECUNDARIO)](https://youtube.com/@ByRuby12EXTRA)  
