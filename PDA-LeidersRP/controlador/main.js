@@ -97,7 +97,7 @@ async function loadZones() {
 
         zoneElement.appendChild(zoneHeader);
 
-        /*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
 
         const dataContainer = document.createElement('div');
         dataContainer.classList.add('data-container');
@@ -107,13 +107,13 @@ async function loadZones() {
             const data = zoneData.datos;
             const orderedFields = [
                 'Playstation',
-                'Discord',
                 'Nombre',
                 'Apellido',
                 'Sexo',
                 'Nacionalidad',
                 'FechaNac',
-                'Trabajo'
+                'Trabajo',
+                'Rango'
             ];
         
             // Crear filas de datos
@@ -141,9 +141,8 @@ async function loadZones() {
         
         zoneElement.appendChild(dataContainer);
         
-        /*------------------------------------------------------------------------------------*/
-
-        // Contenedor para ejecutores
+/*------------------------------------------------------------------------------------*/
+        // Contenedor para busca y captura
         const executorsContainer = document.createElement('div');
         executorsContainer.classList.add('executors-container');    
 
@@ -164,16 +163,17 @@ async function loadZones() {
 
         zoneElement.appendChild(executorsContainer);
 
-        /*------------------------------------------------------------------------------------*/
-
+/*------------------------------------------------------------------------------------*/
         // Contenedor para notas
         const notesContainer = document.createElement('div');
         notesContainer.classList.add('notes-container');
 
-        // Título del contenedor de notas
         const notesTitle = document.createElement('h2');
+
         notesTitle.textContent = `NOTAS:`;
-        notesContainer.appendChild(notesTitle);          
+        notesContainer.appendChild(notesTitle);
+
+        const numberOfNotes = Object.keys(zoneData.notas).length;
 
         for (const noteId in zoneData.notas) {
             const noteContainer = document.createElement('div');
@@ -185,56 +185,106 @@ async function loadZones() {
             notesContainer.appendChild(noteContainer);
         }
 
+        // Crear elemento para mostrar el total de notas en esta zona
+        const totalNotesElement = document.createElement('div');
+        totalNotesElement.textContent = `Total notas: ${numberOfNotes}`; 
+        totalNotesElement.classList.add('total-fine-amount'); 
+
+        const circleElementNotes = document.createElement('div');
+        circleElementNotes.classList.add('circle', 'green');
+
+        totalNotesElement.appendChild(circleElementNotes);
+        notesContainer.appendChild(totalNotesElement);
+
+
         zoneElement.appendChild(notesContainer);
 
-        /*------------------------------------------------------------------------------------*/
-
+/*------------------------------------------------------------------------------------*/
         // Contenedor para multas
         const finesContainer = document.createElement('div');
         finesContainer.classList.add('fines-container');
 
-        // Título del contenedor de multas
         const finesTitle = document.createElement('h2');
         finesTitle.textContent = `MULTAS:`;
         finesContainer.appendChild(finesTitle);
         
+        let totalFineAmountInZone = 0;
+
         for (const fineName in zoneData.multas) {
             const fineContainer = document.createElement('div');
             fineContainer.classList.add('fine-container');
 
+            const fineData = zoneData.multas[fineName];
             fineContainer.innerHTML = `
-                 <p><b>Multa ${fineName}:</b> ${zoneData.multas[fineName]} </p>
+                 <p><b>Multa ${fineName}:</b> ${fineData.description} - ${fineData.price}€</p>
                  <button onclick="updateFine('${zoneId}', '${fineName}')" class="modify-fine-btn">Modificar Multa</button>
              `;
 
             finesContainer.appendChild(fineContainer);
+
+            totalFineAmountInZone += fineData.price;
         }
 
-        zoneElement.appendChild(finesContainer);
-        /*------------------------------------------------------------------------------------*/
+        // Mostrar el total de dinero de las multas en esta zona
+        const totalFineAmountInZoneElement = document.createElement('div');
+        totalFineAmountInZoneElement.textContent = `Total dinero de multas: ${totalFineAmountInZone}€`;
+        totalFineAmountInZoneElement.classList.add('total-fine-amount');
 
+        const circleElementMultas = document.createElement('div');
+        circleElementMultas.classList.add('circle');
+
+        if (totalFineAmountInZone > 50000) {
+            circleElementMultas.classList.add('red');
+        } else {
+            circleElementMultas.classList.add('green');
+        }
+
+        totalFineAmountInZoneElement.appendChild(circleElementMultas);
+        finesContainer.appendChild(totalFineAmountInZoneElement);
+
+        zoneElement.appendChild(finesContainer);
+/*------------------------------------------------------------------------------------*/
         // Contenedor para denuncias
         const complaintsContainer = document.createElement('div');
         complaintsContainer.classList.add('complaints-container');
 
-        // Título del contenedor de denuncias
         const complaintTitle = document.createElement('h2');
         complaintTitle.textContent = `DENUNCIAS:`;
-        complaintsContainer.appendChild(complaintTitle);        
+        complaintsContainer.appendChild(complaintTitle);  
+
+        const numberOfComplaints = Object.keys(zoneData.denuncias).length;
 
         for (const complaintName in zoneData.denuncias) {
             const complaintContainer = document.createElement('div');
             complaintContainer.classList.add('complaint-container');
 
             complaintContainer.innerHTML = `
-                 <p><b>Denuncia ${complaintName}:</b> ${zoneData.denuncias[complaintName]} </p>
-                 <button onclick="updateComplaint('${zoneId}', '${complaintName}')" class="modify-complaint-btn">Modificar Denuncia</button>
-             `;
+                <p><b>Denuncia ${complaintName}:</b> ${zoneData.denuncias[complaintName]} </p>
+                <button onclick="updateComplaint('${zoneId}', '${complaintName}')" class="modify-complaint-btn">Modificar Denuncia</button>
+            `;
 
             complaintsContainer.appendChild(complaintContainer);
         }
 
+        // Agregar el círculo indicador de cantidad de denuncias
+        const totalComplaintsElement = document.createElement('div');
+        totalComplaintsElement.textContent = `Total de denuncias: ${numberOfComplaints}`;
+        totalComplaintsElement.classList.add('total-fine-amount');        
+
+        const circleElementDenuncias = document.createElement('div');
+        circleElementDenuncias.classList.add('circle');
+
+        if (numberOfComplaints >= 20) {
+            circleElementDenuncias.classList.add('red');
+        } else {
+            circleElementDenuncias.classList.add('green');
+        }
+
+        totalComplaintsElement.appendChild(circleElementDenuncias);
+        complaintsContainer.appendChild(totalComplaintsElement);
+
         zoneElement.appendChild(complaintsContainer);
+
 
         /*------------------------------------------------------------------------------------*/
         
@@ -321,23 +371,29 @@ window.updateNote = async function (zoneId, noteId) {
 window.addNewFine = async function (zoneId) {
     const fineName = prompt('Introduce el nombre de la nueva multa:');
     const fineDescription = prompt('Introduce la descripción de la nueva multa:');
-    if (fineName && fineDescription) {
+    const finePrice = parseFloat(prompt('Introduce el precio de la multa en €:'));
+    if (fineName && fineDescription && !isNaN(finePrice) && finePrice >= 0) {
         const updatedData = {
-            [`multas.${fineName}`]: fineDescription,
+            [`multas.${fineName}`]: { description: fineDescription, price: finePrice },
         };
         await updateData(zoneId, 'zones', updatedData);
         loadZones();
+    } else {
+        alert('Por favor, introduce valores válidos para la multa.');
     }
 }
 
 window.updateFine = async function (zoneId, fineId) {
-    const newDescription = prompt('Introduce la nueva descripción de la multa:', '');
-    if (newDescription !== null) {
+    const newDescription = prompt('Introduce la nueva descripción de la multa:');
+    const newPrice = parseFloat(prompt('Introduce el nuevo precio de la multa en €:'));
+    if (newDescription && !isNaN(newPrice) && newPrice >= 0) {
         const updatedData = {
-            [`multas.${fineId}`]: newDescription,
+            [`multas.${fineId}`]: { description: newDescription, price: newPrice },
         };
         await updateData(zoneId, 'zones', updatedData);
         loadZones();
+    } else {
+        alert('Por favor, introduce valores válidos para la modificación de la multa.');
     }
 }
 

@@ -134,3 +134,26 @@ document.getElementById('searchInput').addEventListener('input', filterMultas);
 
  // Mostrar todas las multas al cargar la página
  displayMultas(multas);
+
+/*--------------------------------------------------------*/
+
+window.updateExecutor = async function (zoneId, executorName) {
+    const activateExecutor = confirm(`¿El Ciudadano está en Busca y Captura?`);
+
+    const updatedData = {
+        [`executors.${executorName}`]: activateExecutor,
+    };
+
+    await updateData(zoneId, 'zones', updatedData);
+    loadZones();
+}
+
+window.deleteExecutor = async function (zoneId, executorName) {
+    const confirmDelete = confirm(`¿Seguro que quieres borrar el ejecutor "${executorName}" de la zona?`);
+    if (confirmDelete) {
+        await deleteField(zoneId, 'zones', `executors.${executorName}`);
+        loadZones();
+    }
+}
+
+/*--------------------------------------------------------*/

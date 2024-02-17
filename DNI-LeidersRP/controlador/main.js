@@ -14,26 +14,26 @@ async function addNewData() {
     const zoneName = prompt('Introduce el ID de Discord:');
     if (zoneName) {
         const Playstation = prompt('Introduce el ID de Playstation:');
-        const Discord = prompt('Introduce el ID de Discord:'); 
         const Nombre = prompt('Introduce el Nombre:');
         const Apellido = prompt('Introduce el Apellido:');
         const Sexo = prompt('Introduce el Sexo:');
         const Nacionalidad = prompt('Introduce la Nacionalidad:');
         const FechaNac = prompt('Introduce la Fecha de Nacimiento:');
         const Trabajo = prompt('Introduce el Trabajo:');
+        const Rango = prompt('Introduce el Rango del Trabajo:'); 
 
-        if (Nombre && Apellido && Sexo && Nacionalidad && FechaNac && Playstation && Discord && Trabajo) {
+        if (Nombre && Apellido && Sexo && Nacionalidad && FechaNac && Playstation && Rango && Trabajo) {
             const newZone = { 
                 name: zoneName,
                 datos: {
                     Playstation,
-                    Discord,
                     Nombre,
                     Apellido,
                     Sexo,
                     Nacionalidad,
                     FechaNac,
-                    Trabajo
+                    Trabajo,
+                    Rango
                 },
                 executors: {
                     'BuscaYCaptura': false // Nuevo usuario, inicialmente no buscado
