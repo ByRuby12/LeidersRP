@@ -390,7 +390,7 @@ window.updateNote = async function (zoneId, noteId) {
 }
 
 window.deleteNote = async function (zoneId, noteId) {
-    const confirmDelete = confirm(`¿Seguro que quieres borrar la nota ${noteId} de la zona?`);
+    const confirmDelete = confirm(`¿Seguro que quieres borrar la nota ${noteId} del usuario?`);
     if (confirmDelete) {
         await deleteField(zoneId, 'zones', `notas.${noteId}`);
         loadZones();
@@ -429,7 +429,7 @@ window.updateFine = async function (zoneId, fineId) {
 }
 
 window.deleteFine = async function (zoneId, fineId) {
-    const confirmDelete = confirm(`¿Seguro que quieres borrar la multa "${fineId}" de la zona?`);
+    const confirmDelete = confirm(`¿Seguro que quieres borrar la multa "${fineId}" del usuario?`);
     if (confirmDelete) {
         await deleteField(zoneId, 'zones', `multas.${fineId}`);
         loadZones();
@@ -462,7 +462,7 @@ window.updateComplaint = async function (zoneId, complaintId) {
 }
 
 window.deleteComplaint = async function (zoneId, complaintId) {
-    const confirmDelete = confirm(`¿Seguro que quieres borrar la denuncia "${complaintId}" de la zona?`);
+    const confirmDelete = confirm(`¿Seguro que quieres borrar la denuncia "${complaintId}" del usuario?`);
     if (confirmDelete) {
         await deleteField(zoneId, 'zones', `denuncias.${complaintId}`);
         loadZones();
