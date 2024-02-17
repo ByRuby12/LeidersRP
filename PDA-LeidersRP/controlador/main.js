@@ -173,7 +173,7 @@ async function loadZones() {
         notesTitle.textContent = `NOTAS:`;
         notesContainer.appendChild(notesTitle);
 
-        const numberOfNotes = Object.keys(zoneData.notas).length;
+        const numberOfNotes = zoneData.notas ? Object.keys(zoneData.notas).length : 0;
 
         for (const noteId in zoneData.notas) {
             const noteContainer = document.createElement('div');
@@ -252,7 +252,7 @@ async function loadZones() {
         complaintTitle.textContent = `DENUNCIAS:`;
         complaintsContainer.appendChild(complaintTitle);  
 
-        const numberOfComplaints = Object.keys(zoneData.denuncias).length;
+        const numberOfComplaints = zoneData.denuncias ? Object.keys(zoneData.denuncias).length : 0;
 
         for (const complaintName in zoneData.denuncias) {
             const complaintContainer = document.createElement('div');
