@@ -127,7 +127,7 @@ async function loadZones() {
                     const fieldValue = data[field];
                     const dataFieldElement = document.createElement('div');
                     dataFieldElement.classList.add('data-element');
-                    dataFieldElement.innerHTML = `<strong>${field}:</strong> ${fieldValue || ''}`;
+                    dataFieldElement.innerHTML = `<strong>${field}:</strong> <br> ${fieldValue || ''}`;
                     rowData.appendChild(dataFieldElement);
                 }
         
@@ -207,22 +207,25 @@ async function loadZones() {
         const finesTitle = document.createElement('h2');
         finesTitle.textContent = `MULTAS:`;
         finesContainer.appendChild(finesTitle);
-        
+
         let totalFineAmountInZone = 0;
 
         for (const fineName in zoneData.multas) {
+            const fineData = zoneData.multas[fineName];
             const fineContainer = document.createElement('div');
             fineContainer.classList.add('fine-container');
 
-            const fineData = zoneData.multas[fineName];
+            const paidStatus = fineData.isPaid ? "Pagada" : "No Pagada";
             fineContainer.innerHTML = `
-                 <p><b>Multa ${fineName}:</b> ${fineData.description} - ${fineData.price}€</p>
-                 <button onclick="updateFine('${zoneId}', '${fineName}')" class="modify-fine-btn">Modificar Multa</button>
-             `;
+                <p><b>Multa ${fineName}:</b> ${fineData.description} <br> <b>Precio ➜</b> ${fineData.price}€ <br> <b>Estado ➜</b> ${paidStatus}</p>
+                <button onclick="updateFine('${zoneId}', '${fineName}')" class="modify-fine-btn">Modificar Multa</button>
+            `;
 
             finesContainer.appendChild(fineContainer);
 
-            totalFineAmountInZone += fineData.price;
+            if (!fineData.isPaid) { // Solo contamos las multas no pagadas
+                totalFineAmountInZone += fineData.price;
+            }
         }
 
         // Mostrar el total de dinero de las multas en esta zona
@@ -243,6 +246,7 @@ async function loadZones() {
         finesContainer.appendChild(totalFineAmountInZoneElement);
 
         zoneElement.appendChild(finesContainer);
+
 /*------------------------------------------------------------------------------------*/
         // Contenedor para denuncias
         const complaintsContainer = document.createElement('div');
@@ -372,9 +376,11 @@ window.addNewFine = async function (zoneId) {
     const fineName = prompt('Introduce el nombre de la nueva multa:');
     const fineDescription = prompt('Introduce la descripción de la nueva multa:');
     const finePrice = parseFloat(prompt('Introduce el precio de la multa en €:'));
+    const isPaid = confirm('¿La multa está pagada?');
+
     if (fineName && fineDescription && !isNaN(finePrice) && finePrice >= 0) {
         const updatedData = {
-            [`multas.${fineName}`]: { description: fineDescription, price: finePrice },
+            [`multas.${fineName}`]: { description: fineDescription, price: finePrice, isPaid: isPaid },
         };
         await updateData(zoneId, 'zones', updatedData);
         loadZones();
@@ -386,9 +392,11 @@ window.addNewFine = async function (zoneId) {
 window.updateFine = async function (zoneId, fineId) {
     const newDescription = prompt('Introduce la nueva descripción de la multa:');
     const newPrice = parseFloat(prompt('Introduce el nuevo precio de la multa en €:'));
+    const isPaid = confirm('¿La multa está pagada?');
+
     if (newDescription && !isNaN(newPrice) && newPrice >= 0) {
         const updatedData = {
-            [`multas.${fineId}`]: { description: newDescription, price: newPrice },
+            [`multas.${fineId}`]: { description: newDescription, price: newPrice, isPaid: isPaid },
         };
         await updateData(zoneId, 'zones', updatedData);
         loadZones();

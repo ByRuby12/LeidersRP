@@ -69,7 +69,7 @@ function showUserData(userData) {
                 const fieldValue = data[field];
                 const dataFieldElement = document.createElement('div');
                 dataFieldElement.classList.add('data-element');
-                dataFieldElement.innerHTML = `<strong>${field}:</strong> ${fieldValue || ''}`;
+                dataFieldElement.innerHTML = `<strong>${field}:</strong> <br> ${fieldValue || ''}`;
                 rowData.appendChild(dataFieldElement);
             }
 
@@ -131,17 +131,20 @@ function showUserData(userData) {
     let totalFineAmountInZone = 0;
 
     for (const fineName in userData.multas) {
+        const fineData = userData.multas[fineName];
         const fineContainer = document.createElement('div');
         fineContainer.classList.add('fine-container');
 
-        const fineData = userData.multas[fineName];
+        const paidStatus = fineData.isPaid ? "Pagada" : "No Pagada";
         fineContainer.innerHTML = `
-             <p><b>Multa ${fineName}:</b> ${fineData.description} - ${fineData.price}€</p>
+        <p><b>Multa ${fineName}:</b> ${fineData.description} <br> <b>Precio ➜</b> ${fineData.price}€ <br> <b>Estado ➜</b> ${paidStatus}</p>
              `;
 
         finesContainer.appendChild(fineContainer);
 
-        totalFineAmountInZone += fineData.price;
+        if (!fineData.isPaid) { // Solo contamos las multas no pagadas
+            totalFineAmountInZone += fineData.price;
+        }
     }
 
     // Mostrar el total de dinero de las multas en esta zona
