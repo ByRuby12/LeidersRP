@@ -1,4 +1,4 @@
-import { getDataCollection } from "../firebase/firebase.js";
+import { getDataCollection } from "../../firebase.js";
 
 async function searchUser() {
     const zoneNameInput = document.getElementById('zoneNameInput').value;
