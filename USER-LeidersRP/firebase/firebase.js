@@ -18,12 +18,12 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCmNQFdptDVJBDiHFv-IJ50SOqrsru5Cys",
-  authDomain: "pda-leidersrp.firebaseapp.com",
-  projectId: "pda-leidersrp",
-  storageBucket: "pda-leidersrp.appspot.com",
-  messagingSenderId: "752072256958",
-  appId: "1:752072256958:web:0c04167b0dfc30de805def"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID
 };
 
 //Conectamos con la base de datos
