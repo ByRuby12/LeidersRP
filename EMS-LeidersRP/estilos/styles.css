@@ -1,7 +1,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url('../img/cnp-leiders.png');
+    background-image: url('../img/EMS-LEIDERSRP.png');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -11,11 +11,11 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #999999;
+    background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow-y: auto; 
-    max-height: 1020px;
+    max-height: 1020px; 
 }
 
 h1 {
@@ -89,6 +89,7 @@ h1 {
     width: calc(100% - 20px); 
     margin-bottom: 10px;
 }
+
 
 .data-container .data-element {
     flex: 0 0 calc(50% - 10px); 
@@ -183,96 +184,18 @@ h1 {
     margin-bottom: 10px;
 }
 
-/*------------------------------MULTAS---------------------------------*/
-
-.fines-container {
-    flex: 0 0 calc(50% - 10px); 
-    padding: 10px;
-    background-color: #2b00ff;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow-y: auto; 
-    max-height: 250px; 
-}
-
-.fines-container .fine-container {
-    flex: 0 0 calc(50% - 10px); 
-    margin-bottom: 10px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.fines-container .fine-container:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.fines-container h2 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #ffffff;
-    padding: 10px;
-    border-radius: 4px 4px 0 0;
-    margin: 0;
-    margin-bottom: 10px;
-}
-
-/*-------------------------DENUNCIAS-----------------------------*/
-
-.complaints-container {
-    flex: 0 0 calc(50% - 10px);
-    padding: 10px;
-    background-color: #2b00ff;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow-y: auto; 
-    max-height: 250px; 
-}
-
-.complaints-container .complaint-container {
-    flex: 0 0 calc(50% - 10px); 
-    margin-bottom: 10px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.complaints-container .complaint-container:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.complaints-container h2 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #ffffff;
-    padding: 10px;
-    border-radius: 4px 4px 0 0;
-    margin: 0;
-    margin-bottom: 10px;
-}
-
 /*---------------------------NOTAS-------------------------------*/
 
 .notes-container {
-    flex: 0 0 calc(50% - 10px);
+    flex: 0 0 calc(50% - 10px); 
     padding: 10px;
     background-color: #2b00ff;
     border-radius: 5px;
     margin-bottom: 10px;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow-y: auto;
-    max-height: 250px;
+    overflow-y: auto; 
+    max-height: 250px; 
 }
 
 .notes-container .note-container {
@@ -300,21 +223,10 @@ h1 {
     margin-bottom: 10px;
 }
 
-/*--------------------------BUSCA Y CAPTURA-------------------------*/
-
-.executors-container {
-    padding: 10px;
-    background-color: #2b00ff;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 /*------------------------------------si o no ------------------------------*/
 
 .panel-si {
-    background-color: #FF5733;
+    background-color: #FF5733; 
     color: black;
 }
 
@@ -344,30 +256,6 @@ h1 {
     background-color: #45a049;
 }
 
-/*------------------------------BOTONES CREAR ZONA--------------------------------*/
-
-.create-zone-btn {
-    background-color: #00ac11;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-right: 10px;
-}
-
-.create-zone-btn:hover {
-    background-color: #00863e;
-}
-
-.boton-crear-zona {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 10px; 
-}
-
 /*------------------------------BOTONES ABAJO--------------------------------*/
 
 .buttons-container {
@@ -378,17 +266,9 @@ h1 {
     margin-top: 10px;
 }
 
-.add-data-btn,
-.modify-rank-btn,
-.modify-job-btn, 
-.add-note-btn, 
-.add-fine-btn, 
-.add-complaint-btn, 
-.add-executor-btn,
+.add-note-btn,
 .add-consult-btn,
-.add-operation-btn,
-.modify-zone-name-btn, 
-.delete-zone-btn {
+.add-operation-btn {
     background-color: #ea9800;
     color: rgb(0, 0, 0);
     padding: 20px 10px;
@@ -398,16 +278,30 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
-.add-data-btn:hover,
 .add-note-btn:hover,
-.modify-rank-btn:hover,
-.modify-job-btn:hover, 
-.add-fine-btn:hover,
-.add-complaint-btn:hover,
-.add-executor-btn:hover,
-.modify-zone-name-btn:hover,
-.delete-zone-btn:hover {
+.add-consult-btn:hover,
+.add-operation-btn:hover  {
     background-color: #FFD700;
+}
+
+/*------------------------------BOTONES ARRIBA--------------------------------*/
+
+.modify-note-btn,
+.modify-consult-btn,
+.modify-operation-btn {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modify-note-btn:hover,
+.modify-consult-btn:hover,
+.modify-operation-btn:hover {
+    background-color: #ff7f00;
 }
 
 .search-container {
@@ -421,62 +315,6 @@ h1 {
     border-radius: 10px; 
     border: 1px solid #000000; 
     width: 250px; 
-}
-
-/*------------------------------BOTONES ARRIBA--------------------------------*/
-
-.modify-sensor-btn,
-.modify-note-btn,
-.modify-fine-btn,
-.modify-complaint-btn,
-.modify-executor-btn,
-.modify-consult-btn,
-.modify-operation-btn {
-    background-color: orange;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.modify-sensor-btn:hover,
-.modify-note-btn:hover,
-.modify-fine-btn:hover,
-.modify-complaint-btn:hover,
-.modify-executor-btn:hover,
-.modify-consult-btn:hover,
-.modify-operation-btn:hover {
-    background-color: #ff7f00;
-}
-
-.delete-sensor-btn,
-.delete-consult-btn,
-.delete-operation-btn,
-.delete-note-btn,
-.delete-fine-btn,
-.delete-complaint-btn,
-.delete-executor-btn,
-.delete-consult-btn,
-.delete-operation-btn {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.delete-sensor-btn:hover,
-.delete-note-btn:hover,
-.delete-fine-btn:hover,
-.delete-complaint-btn:hover,
-.delete-executor-btn:hover,
-.delete-consult-btn:hover,
-.delete-operation-btn:hover {
-    background-color: #d63031;
 }
 
 /*--------------------------------------------------------------------------*/
