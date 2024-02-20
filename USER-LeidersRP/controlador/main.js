@@ -84,6 +84,28 @@ function showUserData(userData) {
     zoneElement.appendChild(dataContainer);
 
 /*------------------------------------------------------------------------------------*/
+        // Contenedor para busca y captura
+        const executorsContainer = document.createElement('div');
+        executorsContainer.classList.add('executors-container');        
+
+        for (const executor in userData.executors) {
+            const executorContainer = document.createElement('div');
+            executorContainer.id = `executor-${executor}`;
+            executorContainer.classList.add('executor-container');
+
+            const executorState = userData.executors[executor];
+            executorContainer.innerHTML = `
+                <div class="panel-${executorState ? 'si' : 'no'}">
+                    <div class="panel-text">${executorState ? 'ACTIVO - En busca y captura en la ciudad' : 'INACTIVO - No buscado'} </div>
+                </div>
+            `;
+
+            executorsContainer.appendChild(executorContainer);
+        }
+
+        zoneElement.appendChild(executorsContainer);
+        
+/*------------------------------------------------------------------------------------*/
     // Contenedor para notas
     const notesContainer = document.createElement('div');
     notesContainer.classList.add('notes-container');

@@ -431,6 +431,19 @@ h1 {
     background-color: #d63031;
 }
 
+.search-container {
+    text-align: center; /* Alineación al centro */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+.search-container input[type="text"] {
+    padding: 10px; /* Padding del input */
+    font-size: 1.1em; /* Tamaño del texto */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 1px solid #000000; /* Borde del input */
+    width: 250px; /* Ancho del input */
+}
+
 /*-------------------------------MULTAS LISTA-----------------------------------*/
 
 .multas {

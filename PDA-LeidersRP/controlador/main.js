@@ -6,8 +6,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const expirationTime = localStorage.getItem('expirationTime');
 
     if (storedCredentials && expirationTime && Date.now() < parseInt(expirationTime)) {
-        // Si hay credenciales almacenadas y no han expirado
-        loadZones();
+        document.getElementById('searchInputUser').addEventListener('input', async () => {
+            loadZones();
+        });
 
         // Definición de la función para filtrar multas
         function filterMultas() {
@@ -76,26 +77,28 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 async function loadZones() {
+    const searchInput = document.getElementById('searchInputUser');
     const zonesContainer = document.getElementById('zonesContainer');
-    zonesContainer.innerHTML = '';
+    const searchInputValue = searchInput.value.trim().toLowerCase();
+
+    if (!searchInputValue) {
+        zonesContainer.innerHTML = '';
+        return;
+    }
 
     const zonesSnapshot = await getDataCollection('zones');
+    zonesContainer.innerHTML = '';
+
     zonesSnapshot.forEach((zoneDoc) => {
         const zoneData = zoneDoc.data();
         const zoneId = zoneDoc.id;
-
-        const zoneElement = document.createElement('div');
-        zoneElement.classList.add('zone');
-
-        const zoneHeader = document.createElement('div');
-        zoneHeader.classList.add('zone-header');
-
-        zoneHeader.innerHTML = `
-        <p class="zone-name">Discord: ${zoneData.name}</p>
-        <img src="./img/user.png" class="edit-zone-btn">
-        `;
-
-        zoneElement.appendChild(zoneHeader);
+        if (zoneData.name.trim().toLowerCase().includes(searchInputValue)) {
+            const zoneElement = document.createElement('div');
+            zoneElement.classList.add('zone');
+            const zoneHeader = document.createElement('div');
+            zoneHeader.classList.add('zone-header');
+            zoneHeader.innerHTML = `<p class="zone-name">Discord: ${zoneData.name}</p><img src="./img/user.png" class="edit-zone-btn">`;
+            zoneElement.appendChild(zoneHeader);
 
 /*------------------------------------------------------------------------------------*/
 
@@ -329,6 +332,7 @@ async function loadZones() {
         /*------------------------------------------------------------------------------------*/
 
         zonesContainer.appendChild(zoneElement);
+    }
     });
 }
 

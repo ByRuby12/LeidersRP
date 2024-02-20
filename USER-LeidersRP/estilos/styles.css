@@ -324,19 +324,14 @@ h1 {
 /*------------------------------BOTONES ABAJO--------------------------------*/
 .search-container {
     text-align: center; /* Alineación a la izquierda */
-}
-
-.search-container label {
-    font-size: 23px;
-    font-weight: bold; /* Texto en negrita */
-    margin-right: 10px;
+    margin-bottom: 20px; /* Espacio inferior */
 }
 
 .search-container input[type="text"] {
     padding: 10px;
     font-size: 1.1em; /* Tamaño del texto */
     border-radius: 10px; /* Bordes más redondeados */
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     margin-right: 5px;
     width: 250px; /* Ancho mayor */
 }
@@ -346,15 +341,15 @@ h1 {
     font-size: 1.1em; /* Tamaño del texto */
     font-weight: bold; /* Texto en negrita */
     border-radius: 10px; /* Bordes más redondeados */
-    background-color: #007bff;
-    color: #fff;
+    background-color: #009dff;
+    color: #ffffff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease; /* Transición al pasar el mouse */
 }
 
 .search-container button:hover {
-    background-color: #0056b3;
+    background-color: #006de2;
 }
 
 /*--------------------------------------------------------------------------*/

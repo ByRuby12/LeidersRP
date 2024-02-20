@@ -1,4 +1,4 @@
-import {saveData, deleteData, getDataCollection, updateData, deleteField} from "../firebase/firebase.js";
+import { saveData, deleteData, getDataCollection, updateData, deleteField } from "../firebase/firebase.js";
 
 document.addEventListener('DOMContentLoaded', async () => {
     const storedCredentials = JSON.parse(localStorage.getItem('staffCredentials'));
@@ -6,9 +6,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (storedCredentials && expirationTime && Date.now() < parseInt(expirationTime)) {
         // Si hay credenciales almacenadas y no han expirado
-        loadZones();
+        document.getElementById('searchInput').addEventListener('input', async () => {
+            loadZones();
+        });
 
-        // Habilitar el botón para agregar una nueva zona
         document.getElementById('addZoneBtn').addEventListener('click', async () => {
             const zoneName = prompt('Introduce el nombre del usuario de PlayStation:');
             if (zoneName) {
@@ -17,7 +18,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 loadZones();
             }
         });
-        
     } else {
         // Solicitar usuario y contraseña
         const username = prompt('Introduce el usuario:');
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const expiration = Date.now() + (30 * 60 * 1000); // 30 minutos en milisegundos
             localStorage.setItem('staffCredentials', JSON.stringify({ username, password }));
             localStorage.setItem('expirationTime', expiration.toString());
-            
+
             // Recargar la página para cargar las multas
             location.reload();
 
@@ -39,19 +39,29 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 async function loadZones() {
+    const searchInput = document.getElementById('searchInput');
     const zonesContainer = document.getElementById('zonesContainer');
-    zonesContainer.innerHTML = '';
+    const searchInputValue = searchInput.value.trim().toLowerCase();
+
+    if (!searchInputValue) {
+        zonesContainer.innerHTML = ''; // Si el campo de búsqueda está vacío, limpiar el contenedor de zonas y salir de la función
+        return;
+    }
 
     const zonesSnapshot = await getDataCollection('zones');
+    zonesContainer.innerHTML = ''; // Limpiar el contenedor de zonas antes de agregar nuevas zonas
+
     zonesSnapshot.forEach((zoneDoc) => {
         const zoneData = zoneDoc.data();
         const zoneId = zoneDoc.id;
 
-        const zoneElement = document.createElement('div');
-        zoneElement.classList.add('zone');
+        // Filtrar por nombre de zona
+        if (zoneData.name.trim().toLowerCase().includes(searchInputValue)) {
+            const zoneElement = document.createElement('div');
+            zoneElement.classList.add('zone');
 
-        const zoneHeader = document.createElement('div');
-        zoneHeader.classList.add('zone-header');
+            const zoneHeader = document.createElement('div');
+            zoneHeader.classList.add('zone-header');
 
         zoneHeader.innerHTML = `
         <p class="zone-name">Discord: ${zoneData.name}</p>
@@ -327,6 +337,7 @@ async function loadZones() {
         zoneElement.appendChild(buttonsContainer);
 
         zonesContainer.appendChild(zoneElement);
+        }
     });
 }
 
