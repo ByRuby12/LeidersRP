@@ -6,10 +6,10 @@ En LeidersRP, encontrarás una experiencia de juego de rol incomparable, llena d
 
 ## ¿Qué encontrarás en LeidersRP?
 
-- **PDA Roleplay Consola:** Accede a la consola PDA para realizar una variedad de funciones útiles y gestionar tus actividades en el juego (Solo acceso para la Policia).
-  - [PDA Roleplay Consola](https://byruby12.github.io/LeidersRP/PDA-LeidersRP/)
+- **CNP Roleplay Consola:** Accede a la consola PDA para realizar una variedad de funciones útiles y gestionar tus actividades en el juego (Solo acceso para la Policia).
+  - [CNP Roleplay Consola](https://byruby12.github.io/LeidersRP/CNP-LeidersRP/)
 
-- **EMS Roleplay Consola:** Accede a la consola EMS para realizar una variedad de funciones útiles y gestionar tus actividades como personal médico en el juego (Solo acceso para los EMS).
+- **EMS Roleplay Consola:** Accede a la consola PDA para realizar una variedad de funciones útiles y gestionar tus actividades como personal médico en el juego (Solo acceso para los EMS).
   - [EMS Roleplay Consola](https://byruby12.github.io/LeidersRP/EMS-LeidersRP/)
 
 - **DNI Roleplay Consola:** Utiliza la consola de DNI para gestionar tu identidad en el juego y acceder a información importante (Acceso a todo el mundo).
