@@ -534,6 +534,27 @@ h1 {
     transition: background-color 0.3s ease; /* Animación de transición */
 }
 
+@media only screen and (max-width: 600px) {
+    /* Estilos para vista de móvil */
+    .multas-table th,
+    .multas-table td {
+        padding: 4px; /* Reducir espaciado interno de celda */
+        font-size: 10px; /* Reducir tamaño de fuente */
+    }
+
+    .multas-table th {
+        font-size: 8px; /* Reducir tamaño de fuente del encabezado */
+    }
+
+    /* Estilos adicionales si es necesario */
+
+    /* Muestra todos los datos */
+    .multas-table td:nth-child(1) {
+        display: table-cell;
+    }
+}
+
+
 /*--------------------------------------------------------------------------*/
 hr {
     border: none;
