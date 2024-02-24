@@ -404,7 +404,9 @@ h1 {
 .modify-job-btn:hover, 
 .add-fine-btn:hover,
 .add-complaint-btn:hover,
+.add-consult-btn:hover,
 .add-executor-btn:hover,
+.add-operation-btn:hover,
 .modify-zone-name-btn:hover,
 .delete-zone-btn:hover {
     background-color: #FFD700;
