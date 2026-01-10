@@ -3,48 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="¡Bienvenido a nuestra plataforma de creación de DNI para tu personaje de rol en Leiders RP! Crea la identidad perfecta para tu personaje con nuestro sencillo y realista proceso. ¡Haz que tu experiencia de juego sea aún más auténtica y emocionante con un DNI personalizado! ¡Únete ahora y comienza a dar vida a tu personaje en Leiders RP!">
-    <title>LeidersRP</title>
+    <meta name="description" content="¡Bienvenido a nuestra plataforma de creación de DNI para tu personaje de rol en Leiders RP! Crea la identidad perfecta para tu personaje con nuestro sencillo y realista proceso.">
+    <title>LeidersRP - Crear DNI</title>
     <link rel="stylesheet" type="text/css" href="estilos/styles.css">
     <link rel="icon" type="image/png" href="img/logo.png">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>DNI DE LEIDERSRP</h1>
-        
-        <!-- Resumen o instrucciones -->
-        <div class="instructions">
-            <h2>¿CÓMO CREAR EL DNI EN LEIDERS RP?:</h2>
-            <p>Bienvenido a LeidersRP. Por favor, sigue estas instrucciones detalladamente:</p>
-            <ol>
-                <li><strong>Pulsa el botón "Crear Nuevo Usuario".</strong></li>
-                <li><strong>Introduce la ID de PlayStation cuando se te solicite.</strong></li>
-                <li><strong>Rellena cuidadosamente todos los campos requeridos:</strong></li>
-                <ul>
-                    <li>➦ ID de Discord (Ejemplo: ByRuby12)</li>
-                    <li>➦ Nombre (Ejemplo: Toronto)</li>
-                    <li>➦ Apellido (Ejemplo: Cano)</li>
-                    <li>➦ Sexo (Ejemplo: Masculino o Femenino)</li>
-                    <li>➥ Nacionalidad (Ejemplo: Española)</li>
-                    <li>➥ Fecha de Nacimiento (Ejemplo: 00/00/0000)</li>
-                    <li>➥ Trabajo (Ejemplo: Policia)</li>
-                    <li>➥ Rango (Ejemplo: Superintendente)</li>
-                </ul>
-                <li><strong>Haz clic en el botón "Enviar" para agregar el usuario y los datos.</strong></li>
-            </ol>
-            <p>Una vez completados todos los pasos, recibirás una notificación confirmando que el usuario y los datos se han agregado correctamente. Si encuentras alguna dificultad durante este proceso, te instamos a contactar a la administración para recibir asistencia. Nuestro equipo estará encantado de ayudarte.</p>
+        <header class="header">
+            <h1>🎮 CREADOR DE DNI - LEIDERS RP</h1>
+            <p class="subtitle">Sistema de Registro de Identidad Digital</p>
+        </header>
+
+        <div class="instructions-card">
+            <h2><i class="fas fa-clipboard-list"></i> Guía de Creación de DNI</h2>
+            <p class="intro-text">Sigue estos pasos para crear tu identidad en Leiders RP:</p>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Prepara tu información</h3>
+                        <p>Ten listos todos tus datos personales para tu personaje</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Pulsa "Crear Nuevo Usuario"</h3>
+                        <p>Abre el formulario de registro</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Rellena todos los campos</h3>
+                        <p>Completa la información de tu personaje correctamente</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Envía el formulario</h3>
+                        <p>¡Listo! Tu DNI será registrado en el sistema</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="required-fields">
+                <h3><i class="fas fa-info-circle"></i> Campos Requeridos</h3>
+                <div class="fields-grid">
+                    <div class="field-info">
+                        <span class="field-label">ID de PlayStation</span>
+                        <span class="field-example">Ej: TuUserPS4</span>
+                    </div>
+                    <div class="field-info">
+                        <span class="field-label">Discord ID</span>
+                        <span class="field-example">Ej: ByRuby12</span>
+                    </div>
+                    <div class="field-info">
+                        <span class="field-label">Nombre</span>
+                        <span class="field-example">Ej: Toronto</span>
+                    </div>
+                    <div class="field-info">
+                        <span class="field-label">Apellido</span>
+                        <span class="field-example">Ej: Cano</span>
+                    </div>
+                    <div class="field-info">
+                        <span class="field-label">Sexo</span>
+                        <span class="field-example">Masculino / Femenino</span>
+                    </div>
+                    <div class="field-info">
+                        <span class="field-label">Nacionalidad</span>
+                        <span class="field-example">Ej: Española</span>
+                    </div>
+                    <div class="field-info">
+                        <span class="field-label">Fecha de Nacimiento</span>
+                        <span class="field-example">Ej: 15/05/1990</span>
+                    </div>
+                    <div class="field-info">
+                        <span class="field-label">Trabajo</span>
+                        <span class="field-example">Ej: Policía</span>
+                    </div>
+                    <div class="field-info">
+                        <span class="field-label">Rango</span>
+                        <span class="field-example">Ej: Superintendente</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="help-box">
+                <i class="fas fa-headset"></i>
+                <p><strong>¿Necesitas ayuda?</strong> Contacta a la administración si tienes dudas durante el registro.</p>
+            </div>
         </div>
           
-        <!-- Botón para crear nuevo usuario -->
-        <div class="boton-crear-zona">
-            <button id="addZoneBtn" class="create-zone-btn">Crear Nuevo Usuario</button>
+        <div class="button-container">
+            <button id="addZoneBtn" class="create-zone-btn">
+                <i class="fas fa-plus-circle"></i> Crear Nuevo Usuario
+            </button>
         </div>
     </div>
 
-    <div class="modal-container">
-        
-    </div>
+    <div id="modalContainer"></div>
 
     <script type="module" src="firebase/firebase.js"></script>
     <script type="module" src="controlador/main.js"></script>
