@@ -3,32 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CNP DE LEIDERS RP">
-    <title>LeidersRP</title>
+    <meta name="description" content="PDA Policial de Leiders RP">
+    <title>LeidersRP - PDA Policial</title>
     <link rel="stylesheet" type="text/css" href="estilos/styles.css">
     <link rel="icon" type="image/png" href="img/logo.png">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    
     <div class="container">
-        <h1>PDA POLICIAL DE LEIDERSRP</h1>
+        <header class="header">
+            <h1>👮 PDA POLICIAL - LEIDERS RP</h1>
+        </header>
 
         <div class="search-container">
-            <input type="text" id="searchInputUser" placeholder="Nombre de usuario">
+            <div class="search-wrapper">
+                <input 
+                    type="text" 
+                    id="searchInputUser" 
+                    placeholder="Buscar por usuario o nombre..." 
+                    class="search-input"
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="search-btn">
+                    <i class="fas fa-search"></i> Buscar
+                </button>
+            </div>
         </div>
 
-        <div id="zonesContainer"> </div>
-
-    </div>
-
-    <div class="multas">
-        <h1>CÓDIGO CRIMINAL DE LEIDERS RP</h1>
-        <input type="text" id="searchInput" placeholder="Buscar Multa">
-
-        <div id="multasList"></div>
-
+        <div id="zonesContainer" class="zones-container"></div>
     </div>
 
     <script type="module" src="firebase/firebase.js"></script>

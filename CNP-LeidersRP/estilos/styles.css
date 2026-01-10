@@ -1,564 +1,873 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: url('../img/cnp-leiders.png');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+    background-color: #1a1a1a;
+    overflow-x: hidden;
 }
 
+/* CONTENEDOR PRINCIPAL */
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 100%;
+    width: 100%;
+    margin: 10px auto;
+    padding: 15px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    overflow-y: auto; /* Activar desplazamiento vertical */
-    max-height: 1020px; /* Altura máxima del contenedor con desplazamiento */
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
 }
 
 h1 {
     color: #000000;
     text-align: center;
     margin-bottom: 20px;
+    font-size: 24px;
 }
 
-
-/*--------------------------------ZONA CONTENEDOR----------------------------------*/
-
-/* Estilos para el contenedor de zona */
-.zone {
-    border: 1px solid #ccc;
+/* BÚSQUEDA DE USUARIOS */
+.search-container {
+    text-align: center;
     margin-bottom: 20px;
-    padding: 20px;
+    padding: 10px 0;
+}
+
+.search-container input[type="text"] {
+    padding: 12px 15px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 2px solid #3498db;
+    width: 100%;
+    max-width: 300px;
+    transition: border-color 0.3s;
+}
+
+.search-container input[type="text"]:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+/* ZONAS */
+.zone {
+    border: 2px solid #3498db;
+    margin-bottom: 20px;
+    padding: 15px;
     background-color: #1d00ac;
-    border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    page-break-inside: avoid;
+}
+
+.zone:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .zone-header {
+    background-color: white;
+    border-bottom: 2px solid #3498db;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .zone-name {
-    flex: 1; 
-    font-size: 25px; 
-    font-weight: bold; 
-    margin-right: 20px; 
+    flex: 1;
+    min-width: 200px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0;
 }
 
 .edit-zone-btn {
-    width: 60px; 
-    height: 60px; 
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
-/* Efecto de elevación al hacer hover en el contenedor de zona */
-.zone:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.edit-zone-btn:hover {
+    transform: scale(1.1);
 }
 
-/* Estilos para el encabezado de zona */
-.zone-header {
-    background-color: white;
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Efecto de sombra al hacer hover */
-.zone-header:hover {
-    transform: translateY(-5px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/*------------------------------DATOS-----------------------------------*/
-
-/* Estilos para el contenedor de datos */
+/* DATOS DEL USUARIO */
 .data-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 2px;
-}
-
-/* Estilos para cada fila de datos */
-.data-container .data-row {
-    display: flex;
-    justify-content: space-between;
-    width: calc(100% - 20px); /* Divide el espacio en 2 columnas */
-    margin-bottom: 10px;
-}
-
-/* Estilos para cada elemento de datos */
-.data-container .data-element {
-    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
-    padding: 10px;
-    font-size: 15px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Efecto de elevación al hacer hover en los elementos de datos */
-.data-container .data-element:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/*------------------------------MULTAS---------------------------------*/
-
-/* Estilos para el contenedor de multas */
-.fines-container {
-    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
-    padding: 10px;
-    background-color: #2b00ff;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow-y: auto; /* Agrega scroll vertical cuando sea necesario */
-    max-height: 250px; /* Establece una altura máxima para el contenedor */
-}
-
-
-/* Estilos para cada tarjeta de multa */
-.fines-container .fine-container {
-    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
-    margin-bottom: 10px;
-    padding: 15px;
-    background-color: #f9f9f9;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #3498db;
 }
 
-/* Efecto de tarjeta al hacer hover en las multas */
-.fines-container .fine-container:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.data-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
 }
 
-.fines-container h2 {
-    font-size: 20px;
+.data-element {
+    padding: 16px;
+    font-size: 13px;
+    background: white;
+    border-radius: 8px;
+    border-left: 5px solid #3498db;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.data-element::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+}
+
+.data-element:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.2);
+    border-left-color: #2980b9;
+}
+
+.data-element strong {
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.data-element br {
+    display: none;
+}
+
+/* BUSCA Y CAPTURA */
+.executors-container {
+    padding: 12px;
+    background-color: #2b00ff;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.executor-container {
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.panel-si {
+    background-color: #FF5733;
+    color: white;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.panel-no {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.panel-text {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* NOTAS, MULTAS, DENUNCIAS */
+.notes-container,
+.fines-container,
+.complaints-container {
+    padding: 12px;
+    background-color: #2b00ff;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.notes-container h2,
+.fines-container h2,
+.complaints-container h2 {
+    font-size: 16px;
     font-weight: bold;
     color: #ffffff;
-    padding: 10px;
-    border-radius: 4px 4px 0 0;
-    margin: 0;
+    padding: 10px 0;
+    margin: 0 0 12px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.notes-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.fines-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.complaints-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.note-container,
+.fine-container,
+.complaint-container {
     margin-bottom: 10px;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.note-container:hover,
+.fine-container:hover,
+.complaint-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.note-container p,
+.fine-container p,
+.complaint-container p {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+    line-height: 1.5;
+}
+
+.modify-note-btn,
+.modify-fine-btn,
+.modify-complaint-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.2s;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.modify-note-btn:hover,
+.modify-fine-btn:hover,
+.modify-complaint-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
 }
 
 .total-fine-amount {
     font-weight: bold;
-    padding: 10px;
-    margin-bottom: 5px;
+    padding: 12px;
+    margin-top: 10px;
     background-color: #f9f9f9;
-    border-radius: 10px;
+    border-radius: 6px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.total-fine-amount:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
 }
 
 .circle {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     display: inline-block;
-    margin-left: 7px;
 }
 
-.red {
-    background-color: red;
+.circle.red {
+    background-color: #e74c3c;
 }
 
-.green {
-    background-color: #00b100;
+.circle.green {
+    background-color: #27ae60;
 }
 
-/*-------------------------DENUNCIAS-----------------------------*/
-
-/* Estilos para el contenedor de denuncias */
-.complaints-container {
-    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
-    padding: 10px;
-    background-color: #2b00ff;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow-y: auto; /* Agrega scroll vertical cuando sea necesario */
-    max-height: 250px; /* Establece una altura máxima para el contenedor */
-}
-
-/* Estilos para cada tarjeta de denuncia */
-.complaints-container .complaint-container {
-    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
-    margin-bottom: 10px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Efecto de tarjeta al hacer hover en las denuncias */
-.complaints-container .complaint-container:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.complaints-container h2 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #ffffff;
-    padding: 10px;
-    border-radius: 4px 4px 0 0;
-    margin: 0;
-    margin-bottom: 10px;
-}
-
-
-/*---------------------------NOTAS-------------------------------*/
-
-/* Estilos para el contenedor de notas */
-.notes-container {
-    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
-    padding: 10px;
-    background-color: #2b00ff;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow-y: auto; /* Agrega scroll vertical cuando sea necesario */
-    max-height: 250px; /* Establece una altura máxima para el contenedor */
-}
-
-/* Estilos para cada tarjeta de nota */
-.notes-container .note-container {
-    flex: 0 0 calc(50% - 10px); /* Divide el espacio en 2 columnas */
-    margin-bottom: 10px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Efecto de tarjeta al hacer hover en las notas */
-.notes-container .note-container:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.notes-container h2 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #ffffff;
-    padding: 10px;
-    border-radius: 4px 4px 0 0;
-    margin: 0;
-    margin-bottom: 10px;
-}
-
-/*--------------------------BUSCA Y CAPTURA-------------------------*/
-
-/* Estilos para el contenedor de ejecutores */
-.executors-container {
-    padding: 10px;
-    background-color: #2b00ff;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 1.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/*------------------------------------si o no ------------------------------*/
-
-/* Estilo para el contenedor de panel SI */
-.panel-si {
-    background-color: #FF5733; /* Verde */
-    color: black;
-}
-
-/* Estilo para el contenedor de panel NO */
-.panel-no {
-    background-color: #4CAF50; /* Rojo */
-    color: black;
-}
-
-/* Estilos para el texto dentro del panel */
-.panel-text {
-    font-size: 24px;
-    font-weight: bold;
-    padding: 20px;
-}
-
-/* Estilos para el botón de modificar */
-.modify-sensor-btn {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.modify-sensor-btn:hover {
-    background-color: #45a049;
-}
-
-/*------------------------------BOTONES CREAR ZONA--------------------------------*/
-
-/* Estilos específicos para el botón de agregar nueva zona */
-.create-zone-btn {
-    background-color: #00ac11;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-right: 10px;
-}
-
-.create-zone-btn:hover {
-    background-color: #00863e;
-}
-
-.boton-crear-zona {
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    height: 10px; /* Esto es opcional, ajusta la altura según tus necesidades */
-}
-
-/*------------------------------BOTONES ABAJO--------------------------------*/
-
+/* BOTONES */
 .buttons-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    justify-content: center;
-    margin-top: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
 }
 
-/* Estilos específicos para los botones de agregar nuevo executor y sensor */
-.add-data-btn, 
-.add-note-btn, 
-.add-fine-btn, 
-.add-complaint-btn, 
-.add-executor-btn, 
-.modify-zone-name-btn, 
-.delete-zone-btn {
-    background-color: #ea9800;
-    color: rgb(0, 0, 0);
-    padding: 20px 10px;
+.add-note-btn,
+.add-fine-btn,
+.add-complaint-btn,
+.add-executor-btn {
+    background-color: #27ae60;
+    color: white;
+    padding: 12px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
 }
 
-.add-data-btn:hover,
 .add-note-btn:hover,
 .add-fine-btn:hover,
 .add-complaint-btn:hover,
-.add-executor-btn:hover,
-.modify-zone-name-btn:hover,
-.delete-zone-btn:hover {
-    background-color: #FFD700;
+.add-executor-btn:hover {
+    background-color: #229954;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
 }
 
-/*------------------------------BOTONES ARRIBA--------------------------------*/
+/* FORMULARIOS MODALES */
+.form-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in;
+    padding: 10px;
+}
 
-/* Estilos para los botones de modificar */
-.modify-sensor-btn,
-.modify-note-btn,
-.modify-fine-btn,
-.modify-complaint-btn,
-.modify-executor-btn {
-    background-color: orange;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.form-modal-content {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.form-modal-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.form-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #34495e;
+    font-size: 14px;
+}
+
+.form-label .required {
+    color: #e74c3c;
+    margin-left: 4px;
+}
+
+.form-input,
+textarea.form-input,
+select.form-input {
+    padding: 12px 15px;
+    border: 2px solid #ecf0f1;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus,
+textarea.form-input:focus,
+select.form-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+textarea.form-input {
+    resize: vertical;
+    min-height: 100px;
+}
+
+select.form-input {
+    cursor: pointer;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    justify-content: flex-end;
+}
+
+.form-btn-submit,
+.form-btn-cancel {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.form-btn-submit {
+    background-color: #27ae60;
+    color: white;
+}
+
+.form-btn-submit:hover {
+    background-color: #229954;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+.form-btn-cancel {
+    background-color: #ecf0f1;
+    color: #34495e;
+}
+
+.form-btn-cancel:hover {
+    background-color: #bdc3c7;
+    transform: translateY(-2px);
+}
+
+/* NOTIFICACIONES */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    z-index: 2000;
+    animation: slideInRight 0.3s ease-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 90%;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.notification.success {
+    background-color: #27ae60;
+    color: white;
+}
+
+.notification.error {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* CALCULADOR DE MULTAS */
+.fine-calculator-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+}
+
+.fine-search-calc {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ecf0f1;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.fine-suggestions-calc {
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ecf0f1;
+    border-radius: 6px;
+    background-color: white;
+    display: none;
+}
+
+.fine-suggestions-calc:not(:empty) {
+    display: block;
+}
+
+.fine-suggestion-calc {
+    padding: 10px 12px;
+    border-bottom: 1px solid #ecf0f1;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 13px;
+}
+
+.fine-suggestion-calc:hover {
+    background-color: #e8f4f8;
+}
+
+.selected-fines-calc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 30px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid #bae6fd;
+}
+
+.fine-tag-calc {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #3498db;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.fine-tag-calc button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+    line-height: 1;
+}
+
+.total-calculator {
+    padding: 12px;
+    background-color: #e8f5e9;
+    border: 2px solid #27ae60;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.use-total-btn {
+    padding: 10px 15px;
+    background-color: #27ae60;
     color: white;
     border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    font-size: 13px;
+    width: 100%;
+    transition: all 0.3s;
 }
 
-.modify-sensor-btn:hover,
-.modify-note-btn:hover,
-.modify-fine-btn:hover,
-.modify-complaint-btn:hover,
-.modify-executor-btn:hover {
-    background-color: #ff7f00;
+.use-total-btn:hover {
+    background-color: #229954;
+    transform: translateY(-2px);
 }
 
-/* Estilos para los botones de borrar */
-.delete-sensor-btn,
-.delete-note-btn,
-.delete-fine-btn,
-.delete-complaint-btn,
-.delete-executor-btn {
-    background-color: red;
-    color: black;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+/* MEDIA QUERIES */
+
+/* Tablets (768px - 1024px) */
+@media only screen and (min-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 15px auto;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .zone {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+
+    .zone-header {
+        padding: 15px 20px;
+    }
+
+    .zone-name {
+        font-size: 20px;
+    }
+
+    .data-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .executors-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .buttons-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-modal-content {
+        max-width: 600px;
+    }
+
+    .multas-table {
+        font-size: 14px;
+    }
 }
 
-.delete-sensor-btn:hover,
-.delete-note-btn:hover,
-.delete-fine-btn:hover,
-.delete-complaint-btn:hover,
-.delete-executor-btn:hover {
-    background-color: #d63031;
+/* Desktops (1024px+) */
+@media only screen and (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .zone {
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+
+    .zone-header {
+        padding: 18px 25px;
+    }
+
+    .zone-name {
+        font-size: 22px;
+        min-width: 300px;
+    }
+
+    .data-row {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .executors-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .buttons-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .form-modal-content {
+        max-width: 700px;
+    }
+
+    .multas-table {
+        font-size: 15px;
+    }
+
+    .notes-container,
+    .fines-container,
+    .complaints-container {
+        max-height: 500px;
+    }
 }
 
-.search-container {
-    text-align: center; /* Alineación al centro */
-    margin-bottom: 20px; /* Espacio inferior */
-}
+/* Pantallas muy pequeñas (menos de 480px) */
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
 
-.search-container input[type="text"] {
-    padding: 10px; /* Padding del input */
-    font-size: 1.1em; /* Tamaño del texto */
-    border-radius: 10px; /* Bordes redondeados */
-    border: 1px solid #000000; /* Borde del input */
-    width: 250px; /* Ancho del input */
-}
+    .container {
+        max-height: calc(100vh - 20px);
+        padding: 10px;
+        margin: 5px;
+        border-radius: 4px;
+    }
 
-/*-------------------------------MULTAS LISTA-----------------------------------*/
+    h1 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
 
-.multas {
-    max-width: 1000px;
-    max-height: 300px; /* Altura máxima del contenedor con desplazamiento */
-    margin: 10px auto; /* Centrar horizontalmente */
-    padding: 20px; /* Espaciado interno */
-    background-color: #f9f9f9;
-    overflow-y: auto; /* Activar desplazamiento vertical */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
-}
+    .zone {
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
 
-.multas button {
-    background-color: #007bff; /* Color de fondo del botón */
-    color: white; /* Color del texto del botón */
-    border: none; /* Eliminar borde del botón */
-    padding: 10px 20px; /* Espaciado interno del botón */
-    cursor: pointer; /* Cambiar cursor al pasar el mouse */
-    border-radius: 5px; /* Bordes redondeados */
-}
+    .zone-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        gap: 8px;
+    }
 
-.multas button:hover {
-    background-color: #0056b3; /* Cambiar color de fondo al pasar el mouse */
-}
+    .zone-name {
+        font-size: 16px;
+        min-width: 100%;
+    }
 
-#searchInput {
-    padding: 10px; /* Aumentar el espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-    border: 1px solid #ccc; /* Borde */
-    width: 80%; /* Ancho del input */
-    max-width: 400px; /* Ancho máximo */
-    display: block; /* Convertir en bloque */
-    margin: 0 auto; /* Centrar horizontalmente */
-}
+    .edit-zone-btn {
+        width: 40px;
+        height: 40px;
+    }
 
+    .data-container {
+        padding: 12px;
+        gap: 10px;
+    }
 
-#multasList {
-    list-style-type: none; /* Eliminar viñetas de la lista */
-    padding: 0; /* Eliminar espaciado interno de la lista */
-}
+    .data-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
 
-#multasList li {
-    margin-bottom: 10px; /* Margen inferior entre elementos de la lista */
-}
+    .data-element {
+        padding: 12px;
+        font-size: 12px;
+    }
 
-#multasList li p {
-    margin: 0; /* Eliminar margen de los párrafos dentro de los elementos de la lista */
-}
+    .data-element strong {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
 
-/*--------------------------------------------------------------------------*/
+    .buttons-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
 
-/* Estilos para la tabla de multas */
-.multas-table {
-    width: 100%; /* Ancho de la tabla */
-    margin: 10px auto;
-    border-radius: 10px; /* Bordes redondeados */
-    border: 2px solid black; /* Borde de color negro */
-}
+    .add-note-btn,
+    .add-fine-btn,
+    .add-complaint-btn,
+    .add-executor-btn {
+        padding: 10px;
+        font-size: 12px;
+    }
 
-.multas-table th,
-.multas-table td {
-    padding: 8px; /* Espaciado interno de celda */
-    border-radius: 5px; /* Bordes redondeados */
-    text-align: left; /* Alinear texto a la izquierda */
-    border-bottom: 1px solid #ddd; /* Borde inferior de celda */
-}
+    .multas {
+        max-height: 400px;
+        padding: 10px;
+        margin: 10px;
+    }
 
-/* Estilos para la fila de encabezado */
-.multas-table th {
-    background-color: #007bff; /* Color de fondo del encabezado */
-    color: white; /* Color de texto del encabezado */
-}
+    .multas-table {
+        font-size: 11px;
+    }
 
-/* Estilos para las filas de la tabla */
-.multas-table tr:nth-child(even) {
-    background-color: #f2f2f2; /* Color de fondo de filas pares */
-}
-
-/* Estilos para las celdas de la tabla */
-.multas-table td {
-    font-weight: bold; /* Texto en negrita */
-}
-
-/* Estilos de hover para las filas de la tabla */
-.multas-table tr:hover {
-    background-color: #ddd; /* Cambiar color de fondo al pasar el mouse */
-    transition: background-color 0.3s ease; /* Animación de transición */
-}
-
-@media only screen and (max-width: 600px) {
-    /* Estilos para vista de móvil */
     .multas-table th,
     .multas-table td {
-        padding: 4px; /* Reducir espaciado interno de celda */
-        font-size: 10px; /* Reducir tamaño de fuente */
+        padding: 6px;
     }
 
-    .multas-table th {
-        font-size: 8px; /* Reducir tamaño de fuente del encabezado */
+    .form-modal-content {
+        max-width: 95%;
+        padding: 15px;
     }
 
-    /* Estilos adicionales si es necesario */
-
-    /* Muestra todos los datos */
-    .multas-table td:nth-child(1) {
-        display: table-cell;
+    .form-buttons {
+        flex-direction: column;
     }
-}
 
+    .form-btn-submit,
+    .form-btn-cancel {
+        padding: 10px 15px;
+    }
 
-/*--------------------------------------------------------------------------*/
-hr {
-    border: none;
-    height: 1px;
-    background-color: #ddd;
-    margin: 10px 0;
+    .notification {
+        max-width: 85%;
+        right: 10px;
+        left: 10px;
+        padding: 12px 15px;
+        font-size: 12px;
+    }
+
+    .note-container,
+    .fine-container,
+    .complaint-container {
+        padding: 10px;
+        margin-bottom: 8px;
+    }
+
+    .modify-note-btn,
+    .modify-fine-btn,
+    .modify-complaint-btn {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .total-fine-amount {
+        font-size: 12px;
+        padding: 10px;
+    }
 }
