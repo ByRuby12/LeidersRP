@@ -432,7 +432,6 @@ hr {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 700px;
-    max-height: 90vh;
     overflow-y: auto;
     animation: slideUp 0.3s ease-out;
 }
@@ -868,4 +867,5 @@ select.form-input {
     .fields-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
