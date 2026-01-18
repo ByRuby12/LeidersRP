@@ -8,21 +8,363 @@
     <link rel="stylesheet" type="text/css" href="estilos/styles.css">
     <link rel="icon" type="image/png" href="img/logo.png">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 </head>
 <body>
-    
-    <div class="container">
-        <h1>ADMIN DE LEIDERSRP</h1>
+    <!-- Modal de Login -->
+    <div id="loginModal" class="login-modal active">
+        <div class="login-container">
+            <div class="login-header">
+                <img src="img/logo.png" alt="Logo" class="login-logo">
+                <h1>LeidersRP</h1>
+                <p>Panel de Administración</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">
+                        <i class="fas fa-user"></i> Usuario
+                    </label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        placeholder="Ingresa tu usuario" 
+                        required
+                    >
+                </div>
 
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Buscar por usuario...">
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i> Contraseña
+                    </label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        placeholder="Ingresa tu contraseña" 
+                        required
+                    >
+                </div>
+
+                <div id="loginError" class="login-error"></div>
+
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                </button>
+            </form>
         </div>
+    </div>
 
-        <div id="zonesContainer"> </div>
+    <!-- Modal de Datos -->
+    <div id="dataModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Crear/Editar Datos</h2>
+                <span class="close" onclick="closeModal('dataModal')">&times;</span>
+            </div>
+            <form id="dataForm" class="modal-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dataNombre">Nombre</label>
+                        <input type="text" id="dataNombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataApellido">Apellido</label>
+                        <input type="text" id="dataApellido" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dataDiscord">Discord ID</label>
+                        <input type="text" id="dataDiscord" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataSexo">Sexo</label>
+                        <input type="text" id="dataSexo" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dataNacionalidad">Nacionalidad</label>
+                        <input type="text" id="dataNacionalidad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataFechaNac">Fecha Nacimiento</label>
+                        <input type="text" id="dataFechaNac" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dataTrabajo">Trabajo</label>
+                        <input type="text" id="dataTrabajo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataRango">Rango</label>
+                        <input type="text" id="dataRango" required>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-confirm">Guardar</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal('dataModal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-        <div class="boton-crear-zona">
-            <button id="addZoneBtn" class="create-zone-btn">Añadir Nuevo Usuario</button>
+    <!-- Modal de Trabajo -->
+    <div id="jobModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Modificar Trabajo</h2>
+                <span class="close" onclick="closeModal('jobModal')">&times;</span>
+            </div>
+            <form id="jobForm" class="modal-form">
+                <div class="form-group">
+                    <label for="jobInput">Nuevo Trabajo</label>
+                    <input type="text" id="jobInput" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-confirm">Guardar</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal('jobModal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Rango -->
+    <div id="rankModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Modificar Rango</h2>
+                <span class="close" onclick="closeModal('rankModal')">&times;</span>
+            </div>
+            <form id="rankForm" class="modal-form">
+                <div class="form-group">
+                    <label for="rankInput">Nuevo Rango</label>
+                    <input type="text" id="rankInput" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-confirm">Guardar</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal('rankModal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Consulta -->
+    <div id="consultModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Crear/Editar Consulta</h2>
+                <span class="close" onclick="closeModal('consultModal')">&times;</span>
+            </div>
+            <form id="consultForm" class="modal-form">
+                <div class="form-group">
+                    <label for="consultName">Número Consulta</label>
+                    <input type="text" id="consultName" required>
+                </div>
+                <div class="form-group">
+                    <label for="consultDetails">Detalles</label>
+                    <textarea id="consultDetails" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="consultAttended">Atendido Por</label>
+                    <input type="text" id="consultAttended" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-confirm">Guardar</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal('consultModal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Operación -->
+    <div id="operationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Crear/Editar Operación</h2>
+                <span class="close" onclick="closeModal('operationModal')">&times;</span>
+            </div>
+            <form id="operationForm" class="modal-form">
+                <div class="form-group">
+                    <label for="operationName">Número Operación</label>
+                    <input type="text" id="operationName" required>
+                </div>
+                <div class="form-group">
+                    <label for="operationDetails">Detalles</label>
+                    <textarea id="operationDetails" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="operationAttended">Atendido Por</label>
+                    <input type="text" id="operationAttended" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-confirm">Guardar</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal('operationModal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Nota -->
+    <div id="noteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Crear/Editar Nota</h2>
+                <span class="close" onclick="closeModal('noteModal')">&times;</span>
+            </div>
+            <form id="noteForm" class="modal-form">
+                <div class="form-group">
+                    <label for="noteNumber">Número Nota</label>
+                    <input type="text" id="noteNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="noteText">Descripción</label>
+                    <textarea id="noteText" rows="5" required></textarea>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-confirm">Guardar</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal('noteModal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Multa -->
+    <div id="fineModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Crear/Editar Multa</h2>
+                <span class="close" onclick="closeModal('fineModal')">&times;</span>
+            </div>
+            <form id="fineForm" class="modal-form">
+                <div class="form-group">
+                    <label for="fineNumber">Número Multa</label>
+                    <input type="text" id="fineNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="fineDescription">Descripción</label>
+                    <textarea id="fineDescription" rows="3" required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="finePrice">Precio (€)</label>
+                        <input type="number" id="finePrice" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="finePaid">¿Pagada?</label>
+                        <select id="finePaid">
+                            <option value="false">No Pagada</option>
+                            <option value="true">Pagada</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-confirm">Guardar</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal('fineModal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Denuncia -->
+    <div id="complaintModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Crear/Editar Denuncia</h2>
+                <span class="close" onclick="closeModal('complaintModal')">&times;</span>
+            </div>
+            <form id="complaintForm" class="modal-form">
+                <div class="form-group">
+                    <label for="complaintNumber">Número Denuncia</label>
+                    <input type="text" id="complaintNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="complaintDescription">Descripción</label>
+                    <textarea id="complaintDescription" rows="5" required></textarea>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-confirm">Guardar</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal('complaintModal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Busca y Captura -->
+    <div id="executorModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Busca y Captura</h2>
+                <span class="close" onclick="closeModal('executorModal')">&times;</span>
+            </div>
+            <form id="executorForm" class="modal-form">
+                <div class="form-group checkbox">
+                    <label for="executorActive">
+                        <input type="checkbox" id="executorActive">
+                        ¿El ciudadano está en busca y captura?
+                    </label>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-confirm">Guardar</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal('executorModal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Usuario -->
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Modificar Usuario</h2>
+                <span class="close" onclick="closeModal('userModal')">&times;</span>
+            </div>
+            <form id="userForm" class="modal-form">
+                <div class="form-group">
+                    <label for="userInput">ID de PlayStation</label>
+                    <input type="text" id="userInput" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-confirm">Guardar</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal('userModal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmación para Borrar -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content modal-confirm">
+            <div class="modal-header">
+                <h2>Confirmar Eliminación</h2>
+                <span class="close" onclick="closeModal('deleteModal')">&times;</span>
+            </div>
+            <p id="deleteMessage">¿Está seguro de que desea eliminar esto?</p>
+            <div class="modal-buttons">
+                <button type="button" class="btn-confirm" onclick="confirmDelete()">Eliminar</button>
+                <button type="button" class="btn-cancel" onclick="closeModal('deleteModal')">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div id="mainContent" class="main-content hidden">
+        <div class="container">
+            <h1>ADMIN DE LEIDERSRP</h1>
+
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar por usuario...">
+            </div>
+
+            <div id="zonesContainer"></div>
+
+            <div class="boton-crear-zona">
+                <button id="addZoneBtn" class="create-zone-btn">Añadir Nuevo Usuario</button>
+            </div>
+
+            <button id="logoutBtn" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+            </button>
         </div>
     </div>
 
