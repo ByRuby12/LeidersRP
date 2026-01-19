@@ -347,24 +347,133 @@
         </div>
     </div>
 
+    <!-- Modal de Nuevo Usuario -->
+    <div id="newUserModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Crear Nuevo Usuario</h2>
+                <span class="close" onclick="closeModal('newUserModal')">&times;</span>
+            </div>
+            <form id="newUserForm" class="modal-form">
+                <div class="form-group">
+                    <label for="newUserPlayStation">ID de PlayStation</label>
+                    <input type="text" id="newUserPlayStation" placeholder="Ej: Juan_Perez" required>
+                </div>
+                
+                <h3 style="margin-top: 20px; color: #1d00ac; font-size: 16px;">Datos Personales</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="newUserNombre">Nombre</label>
+                        <input type="text" id="newUserNombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newUserApellido">Apellido</label>
+                        <input type="text" id="newUserApellido" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="newUserDiscord">Discord ID</label>
+                        <input type="text" id="newUserDiscord" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newUserSexo">Sexo</label>
+                        <input type="text" id="newUserSexo" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="newUserNacionalidad">Nacionalidad</label>
+                        <input type="text" id="newUserNacionalidad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newUserFechaNac">Fecha de Nacimiento</label>
+                        <input type="text" id="newUserFechaNac" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="newUserTrabajo">Trabajo</label>
+                        <input type="text" id="newUserTrabajo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newUserRango">Rango</label>
+                        <input type="text" id="newUserRango" required>
+                    </div>
+                </div>
+
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-confirm">Crear Usuario</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal('newUserModal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Contenido Principal -->
     <div id="mainContent" class="main-content hidden">
         <div class="container">
             <h1>ADMIN DE LEIDERSRP</h1>
 
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Buscar por usuario...">
+            <!-- Header del Panel -->
+            <div class="admin-header">
+                <!-- Izquierda: Título Info -->
+                <div class="header-left">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-cog" style="font-size: 24px; color: #1d00ac;"></i>
+                        <div>
+                            <div style="font-weight: bold; color: #1d00ac; font-size: 14px;">Panel de Control</div>
+                            <div style="font-size: 12px; color: #666;">Sistema de Administración</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Centro: Buscador -->
+                <div class="header-center">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="🔍 Buscar usuario por PlayStation ID...">
+                    </div>
+                </div>
+
+                <!-- Derecha: Botones -->
+                <div class="header-right">
+                    <button id="addZoneBtn" class="create-zone-btn">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Nuevo Usuario</span>
+                    </button>
+                    <button id="logoutBtn" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Salir</span>
+                    </button>
+                </div>
             </div>
 
-            <div id="zonesContainer"></div>
+            <!-- Contenido Principal -->
+            <div class="admin-content">
+                <!-- Estadísticas Desplegables -->
+                <div class="stats-wrapper">
+                    <!-- Estadísticas del Servidor -->
+                    <button class="stats-toggle-btn active" onclick="toggleStats('server')">
+                        <span><i class="fas fa-server"></i> Estadísticas del Servidor</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="statsContainer" class="stats-content"></div>
 
-            <div class="boton-crear-zona">
-                <button id="addZoneBtn" class="create-zone-btn">Añadir Nuevo Usuario</button>
+                    <!-- Ranking de Usuarios -->
+                    <button class="stats-toggle-btn active" onclick="toggleStats('ranking')">
+                        <span><i class="fas fa-trophy"></i> Ranking de Usuarios</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="topStatsContainer" class="stats-content"></div>
+                </div>
+
+                <!-- Zona de Usuarios -->
+                <div id="zonesContainer"></div>
             </div>
-
-            <button id="logoutBtn" class="logout-btn">
-                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
-            </button>
         </div>
     </div>
 
