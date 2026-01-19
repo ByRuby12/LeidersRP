@@ -4,23 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="EMS DE LEIDERSRP">
-    <title>LeidersRP</title>
+    <title>EMS - LeidersRP</title>
     <link rel="stylesheet" type="text/css" href="estilos/styles.css">
     <link rel="icon" type="image/png" href="img/logo.png">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 </head>
 <body>
-    
-    <div class="container">
-        <h1>PDA EMS DE LEIDERSRP</h1>
+    <!-- Modal de Login -->
+    <div id="loginModal" class="login-modal">
+        <div class="login-container">
+            <div class="login-header">
+                <img src="img/logo.png" alt="Logo EMS" class="login-logo">
+                <h1>EMS - LeidersRP</h1>
+                <p>Sistema de Gestión Médica de Emergencias</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">
+                        <i class="fas fa-user-md"></i> Usuario
+                    </label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        placeholder="Ingresa tu usuario" 
+                        required
+                    >
+                </div>
 
-        <div class="search-container">
-            <input type="text" id="searchInputUser" placeholder="Nombre de usuario">
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i> Contraseña
+                    </label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        placeholder="Ingresa tu contraseña" 
+                        required
+                    >
+                </div>
+
+                <div id="loginError" class="login-error"></div>
+
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Acceder al Sistema
+                </button>
+            </form>
+
+            <div class="login-footer">
+                <p><i class="fas fa-shield-alt"></i> Acceso Restringido - Solo Personal Autorizado</p>
+            </div>
         </div>
+    </div>
 
-        <div id="zonesContainer"> </div>
+    <!-- Modal de Nota -->
+    <div id="noteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Crear/Editar Nota</h2>
+                <span class="close" onclick="closeModal('noteModal')">&times;</span>
+            </div>
+            <form id="noteForm" class="modal-form">
+                <div class="form-group">
+                    <label for="noteNumber">Número de Nota</label>
+                    <input type="text" id="noteNumber" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="noteText">Descripción</label>
+                    <textarea id="noteText" rows="5" required></textarea>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-confirm">Guardar</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal('noteModal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
+    <!-- Modal de Consulta -->
+    <div id="consultModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Crear/Editar Consulta Médica</h2>
+                <span class="close" onclick="closeModal('consultModal')">&times;</span>
+            </div>
+            <form id="consultForm" class="modal-form">
+                <div class="form-group">
+                    <label for="consultNumber">Número de Consulta</label>
+                    <input type="text" id="consultNumber" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="consultDetails">Detalles</label>
+                    <textarea id="consultDetails" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="consultAttended">Atendido Por</label>
+                    <input type="text" id="consultAttended" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-confirm">Guardar</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal('consultModal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Operación -->
+    <div id="operationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Crear/Editar Operación Médica</h2>
+                <span class="close" onclick="closeModal('operationModal')">&times;</span>
+            </div>
+            <form id="operationForm" class="modal-form">
+                <div class="form-group">
+                    <label for="operationNumber">Número de Operación</label>
+                    <input type="text" id="operationNumber" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="operationDetails">Detalles</label>
+                    <textarea id="operationDetails" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="operationAttended">Atendido Por</label>
+                    <input type="text" id="operationAttended" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-confirm">Guardar</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal('operationModal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div id="mainContent" class="main-content hidden">
+        <div class="container">
+            <h1>PDA EMS DE LEIDERSRP</h1>
+
+            <div class="search-container">
+                <input type="text" id="searchInputUser" placeholder="🔍 Buscar paciente por nombre...">
+            </div>
+
+            <div id="zonesContainer"></div>
+        </div>
     </div>
 
     <script type="module" src="firebase/firebase.js"></script>
