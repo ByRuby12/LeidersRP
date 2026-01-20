@@ -426,6 +426,17 @@ hr {
     padding: 20px;
 }
 
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .modal-content {
     background: white;
     border-radius: 16px;
@@ -434,6 +445,7 @@ hr {
     max-width: 700px;
     overflow-y: auto;
     animation: slideUp 0.3s ease-out;
+    max-height: 90vh;
 }
 
 .modal-header {
@@ -570,6 +582,30 @@ select.form-input {
     padding-right: 35px;
 }
 
+input[type="date"].form-input {
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="date"].form-input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 2px;
+    opacity: 0.6;
+    filter: invert(0.6);
+    transition: all 0.3s ease;
+}
+
+input[type="date"].form-input::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+    filter: invert(0.8);
+}
+
+input[type="date"].form-input:focus::-webkit-calendar-picker-indicator {
+    opacity: 1;
+    filter: invert(0.3) sepia(0.8) saturate(2) hue-rotate(230deg);
+}
+
 .form-hint {
     font-size: 12px;
     color: #7f8c8d;
@@ -636,11 +672,11 @@ select.form-input {
     top: 20px;
     right: 20px;
     padding: 16px 24px;
-    border-radius: 8px;
+    border-radius: 12px;
     font-weight: 600;
     z-index: 2000;
     animation: slideInRight 0.3s ease-out;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -648,6 +684,16 @@ select.form-input {
 
 .notification.show {
     opacity: 1;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notification-content i {
+    font-size: 20px;
 }
 
 .notification-success {
@@ -662,6 +708,11 @@ select.form-input {
 
 .notification-warning {
     background-color: #f39c12;
+    color: white;
+}
+
+.notification-info {
+    background-color: #3498db;
     color: white;
 }
 
@@ -856,6 +907,53 @@ select.form-input {
         max-width: 90%;
         right: 10px;
         left: 10px;
+    }
+
+    .modal-overlay {
+        padding: 10px;
+    }
+
+    .modal-content {
+        max-height: 95vh;
+    }
+
+    .modal-header {
+        padding: 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 18px;
+    }
+
+    .close-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .dni-form {
+        padding: 20px;
+    }
+
+    .form-sections {
+        gap: 20px;
+    }
+
+    .form-section {
+        gap: 15px;
+    }
+
+    .form-section h3 {
+        font-size: 16px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .form-group label {
+        font-size: 13px;
     }
 }
 

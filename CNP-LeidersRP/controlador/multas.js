@@ -1,1 +1,550 @@
-const multas=[{'numero':'1.1','descripcion':'Uso\x20excesivo\x20del\x20claxón','precio':0x64,'mesesPrision':0x0},{'numero':'1.2','descripcion':'Giro\x20indebido','precio':0x32,'mesesPrision':0x0},{'numero':'1.3','descripcion':'Circular\x20en\x20sentido\x20contrario','precio':0x96,'mesesPrision':0x0},{'numero':'1.4','descripcion':'Estacionar\x20en\x20zonas\x20no\x20habilitadas\x20y\x20obstruir\x20la\x20circulación','precio':0x96,'mesesPrision':0x0},{'numero':'1.5','descripcion':'Ignorar\x20las\x20señales\x20de\x20tránsito','precio':0x64,'mesesPrision':0x0},{'numero':'1.6','descripcion':'Saltarse\x20un\x20semáforo','precio':0x32,'mesesPrision':0x0},{'numero':'1.7','descripcion':'No\x20ceder\x20el\x20paso\x20a\x20vehiculos\x20de\x20emergencia','precio':0xfa,'mesesPrision':0x0},{'numero':'1.8','descripcion':'Realizar\x20adelantamiento\x20indebido','precio':0x64,'mesesPrision':0x0},{'numero':'1.9','descripcion':'Circular\x20marcha\x20atrás','precio':0x96,'mesesPrision':0x0},{'numero':'1.10','descripcion':'Ignorar\x20señales\x20de\x20los\x20agentes\x20que\x20regulan\x20la\x20circulación','precio':0x12c,'mesesPrision':0x0},{'numero':'1.11','descripcion':'Saltarse\x20/\x20omitir\x20un\x20control\x20de\x20tráfico','precio':0x1f4,'mesesPrision':0x0},{'numero':'1.12','descripcion':'Conducir\x20un\x20vehiculo\x20en\x20malas\x20condiciones','precio':0x96,'mesesPrision':0x0},{'numero':'1.13','descripcion':'Exceso\x20de\x20velocidad\x20en\x20vías\x20urbanas','precio':0xfa,'mesesPrision':0xa},{'numero':'1.14','descripcion':'Conducción\x20temeraria','precio':0x12c,'mesesPrision':0xa},{'numero':'1.15','descripcion':'Exceso\x20de\x20velocidad\x20en\x20vías\x20secundarias','precio':0xfa,'mesesPrision':0xa},{'numero':'1.16','descripcion':'Conducir\x20bajo\x20los\x20efectos\x20de\x20drogas/alcohol','precio':0x1f4,'mesesPrision':0xa},{'numero':'1.17','descripcion':'Circular\x20por\x20zonas\x20no\x20habilitadas\x20para\x20ello','precio':0x15e,'mesesPrision':0x0},{'numero':'1.18','descripcion':'Circular\x20sin\x20el\x20casco\x20con\x20motocicleta','precio':0x64,'mesesPrision':0x0},{'numero':'1.18.1','descripcion':'Circular\x20sin\x20licencia\x20de\x20conducir','precio':0x1f4,'mesesPrision':0x0},{'numero':'1.19','descripcion':'Circular\x20marcha\x20atrás\x20con\x20el\x20vehiculo','precio':0x1f4,'mesesPrision':0x0},{'numero':'1.20','descripcion':'Conducir\x20sin\x20papeles\x20del\x20coche','precio':0x1f4,'mesesPrision':0x0},{'numero':'1.21','descripcion':'Derrapar\x20con\x20la\x20rueda\x20del\x20vehiculo\x20en\x20via\x20pública','precio':0x1f4,'mesesPrision':0x0},{'numero':'1.22','descripcion':'Aparcar\x20en\x20doble\x20fila','precio':0xc8,'mesesPrision':0x0},{'numero':'1.23','descripcion':'Aparcar\x20en\x20Zona\x20de\x20Minusválidos','precio':0x1f4,'mesesPrision':0xa},{'numero':'1.24','descripcion':'Chocarse\x20contra\x20un\x20vehiculo\x20aposta','precio':0x1f4,'mesesPrision':0x0},{'numero':'1.25','descripcion':'No\x20tener\x20documentación\x20(DNI)','precio':0x3e8,'mesesPrision':0xa},{'numero':'1.26','descripcion':'Atropellar\x20a\x20un\x20civil','precio':0x5dc,'mesesPrision':0xf},{'numero':'2.1','descripcion':'Alteración\x20del\x20orden\x20público','precio':0x2bc,'mesesPrision':0x0},{'numero':'2.2','descripcion':'Racismo','precio':0x2bc,'mesesPrision':0x0},{'numero':'2.3','descripcion':'Faltas\x20de\x20respeto\x20a\x20otro\x20civil','precio':0x64,'mesesPrision':0x0},{'numero':'2.4','descripcion':'Dañar\x20mobiliario\x20urbano\x20(dependiendo\x20de\x20los\x20daños)','precio':0x3e8,'mesesPrision':0x0},{'numero':'2.5','descripcion':'Acoso\x20psicológico','precio':0x1770,'mesesPrision':0x5},{'numero':'2.6','descripcion':'Amenaza\x20de\x20muerte\x20a\x20un\x20civil','precio':0x5dc,'mesesPrision':0x5},{'numero':'2.7','descripcion':'Suplantación\x20de\x20identidad','precio':0xbb8,'mesesPrision':0x0},{'numero':'2.8','descripcion':'Circular\x20por\x20la\x20vía\x20pública\x20con\x20el\x20rostro\x20oculto','precio':0x2bc,'mesesPrision':0x5},{'numero':'2.9','descripcion':'Circular\x20en\x20vía\x20pública\x20desnudo\x20o\x20semi-desnudo','precio':0x3e8,'mesesPrision':0x0},{'numero':'2.10','descripcion':'Circular\x20en\x20vían\x20pública\x20sin\x20camiseta','precio':0x78,'mesesPrision':0x0},{'numero':'2.11','descripcion':'Acoso\x20sexual','precio':0x7530,'mesesPrision':0x3c},{'numero':'2.12','descripcion':'Violar\x20una\x20orden\x20de\x20alejamiento\x20con\x20sentendia\x20firme','precio':0x61a8,'mesesPrision':0x28},{'numero':'2.13','descripcion':'Negativa\x20a\x20identificarse','precio':0x3e8,'mesesPrision':0xa},{'numero':'2.14','descripcion':'Obstrucción\x20a\x20la\x20justicia','precio':0x9c4,'mesesPrision':0xa},{'numero':'2.15','descripcion':'Fraude\x20o\x20engaño','precio':0xbb8,'mesesPrision':0xa},{'numero':'3.1','descripcion':'Posesión\x20de\x20estupefacientes\x20según\x20cantidades:\x20Consumo\x20propio:\x20Hasta\x205\x20unidades.\x20Más\x20de\x205\x20unidades\x20se\x20considera\x20tráfico\x20de\x20drogas.','precio':0x0,'mesesPrision':0x0},{'numero':'3.2','descripcion':'Posesión\x20de\x20estupefacientes\x20(Marihuana\x20/\x20Metanfetamina\x20/\x20Cocaina\x20/\x20Hachís)\x20500\x20x\x20unidad\x20una\x20vez\x20superadas\x20las\x205\x20unidades','precio':0x1f4,'mesesPrision':0xf},{'numero':'3.3','descripcion':'Retirada\x20de\x20estupefacientes\x20de\x20consumo\x20propio\x20en\x20caso\x20de\x20que\x20supere\x20la\x20cantidad\x20reglamentada.\x20Retirada\x20de\x20estupefacientes\x20de\x20consumo\x20propio\x20en\x20caso\x20de\x20que\x20supere\x20la\x20cantidad\x20reglamentaria','precio':0x0,'mesesPrision':0x0},{'numero':'3.4','descripcion':'Posesión\x20de\x20materia\x20prima\x20para\x20la\x20fabricación\x20de\x20drogas\x20La\x20materia\x20prima\x20usada\x20para\x20la\x20fabricación\x20de\x20drogas\x20serán\x20penadas\x20según\x20la\x20droga\x20o\x20arma\x20que\x20produzcan\x20tal\x20y\x20como\x20se\x20indica\x20en\x20todos\x20los\x20precios\x20de\x20los\x20articulos','precio':0x0,'mesesPrision':0x0},{'numero':'3.5','descripcion':'Consumo\x20de\x20estupefacientes\x20en\x20vía\x20pública','precio':0x2ee,'mesesPrision':0x0},{'numero':'3.6','descripcion':'Posesión\x20de\x20dinero\x20negro\x20según\x20cantidades:\x20Cat\x201\x20-->\x200\x20a\x205.000€\x20=\x201.500€\x20|\x20Cat\x202\x20-->\x205.000\x20a\x2010.000€\x20=\x203.000€\x20|\x20Cat\x203\x20-->\x2010.000\x20a\x20INFINITO\x20=\x204.500€\x20+\x20(500\x20x\x201000€\x20de\x20dinero\x20negro)','precio':0x0,'mesesPrision':0x0},{'numero':'4.1','descripcion':'Serán\x20considerados\x20como\x20tal,\x20las\x20armas\x20de\x20fuego\x20que\x20no\x20se\x20consigan\x20en\x20una\x20tienda\x20autorizada.\x20El\x20mal\x20uso\x20de\x20las\x20armas\x20de\x20fuego\x20letales\x20conlleva\x20una\x20sanción\x20equivalente\x20a\x20la\x20del\x20articulo\x204.4\x20y\x20la\x20retirada\x20de\x20la\x20licencia\x20de\x20armas','precio':0x0,'mesesPrision':0x0},{'numero':'4.2','descripcion':'Queda\x20totalmente\x20prohibido,\x20por\x20parte\x20de\x20los\x20civiles,\x20portar\x20una\x20pistolera\x20como\x20atuendo\x20de\x20modo\x20decorativo','precio':0x1f4,'mesesPrision':0x0},{'numero':'4.3','descripcion':'Posesión\x20de\x20arma\x20blanca:\x20Son\x20considerados\x20como\x20tal,\x20aquellas\x20armas\x20de\x20filo\x20cortante\x20que\x20no\x20se\x20vendan\x20legalmente.\x20Armas\x20blancas\x20susceptibles\x20de\x20ser\x20usados\x20como\x20arma\x20ilegal:\x20Cuchillo,\x20Bate\x20de\x20besibol,\x20Palo\x20de\x20Golf,\x20Botella\x20rota,\x20Linterna,\x20Machete...','precio':0x5dc,'mesesPrision':0x0},{'numero':'4.4','descripcion':'Portar\x20pistola\x20de\x20bajo\x20calibre','precio':0xdac,'mesesPrision':0xa},{'numero':'4.5','descripcion':'Portar\x20armas\x20automáticas\x20de\x20bajo\x20calibre\x20/\x20medio','precio':0x1770,'mesesPrision':0xa},{'numero':'4.6','descripcion':'Portar\x20armas\x20automáticas\x20de\x20alto\x20calibre','precio':0x3a98,'mesesPrision':0xf},{'numero':'4.7','descripcion':'Tráfico\x20de\x20armas','precio':0x3a98,'mesesPrision':0x19},{'numero':'4.8','descripcion':'Objetos:\x20Podrán\x20ser\x20retiradas\x20los\x20objetos\x20que\x20el\x20agente\x20justifique\x20que\x20puedan\x20o\x20hayan\x20sido\x20utilizados\x20para\x20cometer\x20delitos','precio':0x0,'mesesPrision':0x0},{'numero':'4.9','descripcion':'Atentado\x20terrorista','precio':0x186a0,'mesesPrision':0x78},{'numero':'4.10','descripcion':'Atentar\x20contra\x20la\x20vida\x20o\x20integridad\x20física\x20de\x20varias\x20personas\x20y/o\x20funcionarios\x20públicos\x20mediante\x20la\x20organización\x20armada\x20de\x20varios\x20individuos','precio':0x186a0,'mesesPrision':0xf0},{'numero':'4.11','descripcion':'Se\x20considera\x20ocupación\x20ilegal\x20de\x20propiedad\x20cualquier\x20acción\x20de\x20ingresar\x20o\x20residir\x20en\x20una\x20propiedad\x20sin\x20el\x20consentimiento\x20legal\x20del\x20propietario','precio':0x1388,'mesesPrision':0xa},{'numero':'5.1','descripcion':'Agresión\x20a\x20otro\x20individuo','precio':0x2bc,'mesesPrision':0xa},{'numero':'5.2','descripcion':'Intento\x20de\x20agresión\x20a\x20civil','precio':0x1f4,'mesesPrision':0xa},{'numero':'5.3','descripcion':'Intento\x20de\x20secuestro','precio':0x9c4,'mesesPrision':0xf},{'numero':'5.4','descripcion':'Secuestro\x20a\x20un\x20individuo','precio':0xfa0,'mesesPrision':0x14},{'numero':'5.5','descripcion':'Intento\x20de\x20homicidio\x20a\x20un\x20civil\x20sin\x20el\x20uso\x20de\x20armas','precio':0x5dc,'mesesPrision':0xa},{'numero':'5.6','descripcion':'Intento\x20de\x20homicidio\x20a\x20un\x20civil\x20con\x20uso\x20de\x20armas\x20de\x20cualquier\x20índole','precio':0xbb8,'mesesPrision':0x14},{'numero':'5.7','descripcion':'Intento\x20de\x20homicidio\x20a\x20múltiples\x20civiles\x20sin\x20el\x20uso\x20de\x20armas','precio':0xbb8,'mesesPrision':0xf},{'numero':'5.8','descripcion':'Intento\x20de\x20homicidio\x20a\x20múltiples\x20civiles\x20con\x20uso\x20de\x20armas\x20de\x20cualquier\x20índole:\x204000\x20por\x20cada\x20civil\x20/\x2020\x20Meses\x20no\x20acumulables','precio':0xfa0,'mesesPrision':0x14},{'numero':'6.1','descripcion':'Amenazas,\x20desobediencia\x20e\x20inultos:\x20Tras\x20la\x20primera\x20omisión\x20de\x20la\x20orden\x20de\x20un\x20funcionario\x20de\x20policía,\x20se\x20le\x20pondrá\x20acumular\x20al\x20reo\x20el\x20monto\x20económico\x20después\x20del\x20primer\x20aviso\x20por\x20cada\x20falta\x20de\x20respeto\x20o\x20desataco','precio':0x0,'mesesPrision':0x0},{'numero':'6.2','descripcion':'Insultar\x20a\x20un\x20funcionario\x20pública\x20(No\x20acumluable\x20más\x20de\x2010\x20veces).\x20Los\x20meses\x20tampoco\x20son\x20acumulativos','precio':0x190,'mesesPrision':0xa},{'numero':'6.3','descripcion':'Agresión\x20o\x20amenaza\x20de\x20muerte\x20a\x20un\x20funcionario\x20(No\x20acumulable\x20más\x20de\x205\x20veces).\x20Los\x20meses\x20tampoco\x20son\x20acumulativos','precio':0x7d0,'mesesPrision':0xf},{'numero':'6.4','descripcion':'Desacato','precio':0x2bc,'mesesPrision':0xa},{'numero':'6.5','descripcion':'Resistirse\x20al\x20arresto','precio':0x320,'mesesPrision':0xa},{'numero':'6.6','descripcion':'Huir\x20de\x20la\x20justicia','precio':0x3e8,'mesesPrision':0xa},{'numero':'6.7','descripcion':'Falso\x20testimonio','precio':0x1f4,'mesesPrision':0x5},{'numero':'6.8','descripcion':'Usurpación\x20de\x20funciones\x20públicas','precio':0x2710,'mesesPrision':0xf},{'numero':'6.9','descripcion':'Secuestro\x20a\x20un\x20funcionario\x20público','precio':0x1770,'mesesPrision':0x1e},{'numero':'6.10','descripcion':'Amenazar\x20a\x20un\x20funcionario\x20público\x20a\x20mano\x20armada','precio':0x1194,'mesesPrision':0x14},{'numero':'6.11','descripcion':'Intento\x20de\x20homicidio\x20a\x20un\x20funcionario\x20público','precio':0x2134,'mesesPrision':0x1e},{'numero':'6.12','descripcion':'Homicidio\x20a\x20un\x20funcionario','precio':0x61a8,'mesesPrision':0x28},{'numero':'6.13','descripcion':'Homicidio\x20a\x20múltiples\x20funcionarios','precio':0xd6d8,'mesesPrision':0x3c},{'numero':'6.14','descripcion':'Robo\x20de\x20secretos\x20de\x20estado','precio':0x0,'mesesPrision':0xf0},{'numero':'6.15','descripcion':'Cada\x20multa\x20impagada\x20se\x20acumulará\x20en\x20la\x20base\x20de\x20datos\x20de\x20la\x20policía.\x20Si\x20se\x20superan\x20los\x2050.000€\x20impagados,\x20la\x20polcía\x20podrá\x20requisar\x20bienes\x20personales\x20con\x20tal\x20de\x20saldar\x20las\x20multas\x20impagadas','precio':0x0,'mesesPrision':0x0},{'numero':'6.16','descripcion':'Por\x20no\x20pagar\x20la\x20hipoteca\x20de\x20un\x20establecimiento,\x20la\x20polcía\x20podrá\x20echar\x20el\x20cierre\x20a\x20negocios\x20o\x20viviendas.\x20Se\x20lo\x20quedaría\x20en\x20ayuntamiento','precio':0x0,'mesesPrision':0x0},{'numero':'7.1','descripcion':'Robo\x20de\x20vehiculo','precio':0x2bc,'mesesPrision':0xa},{'numero':'7.2','descripcion':'Robo\x20con\x20intimidación\x20a\x20un\x20civil','precio':0x3e8,'mesesPrision':0xa},{'numero':'7.3','descripcion':'Robo\x20con\x20violencia\x20a\x20un\x20civil','precio':0x4b0,'mesesPrision':0xa},{'numero':'7.4','descripcion':'Robo\x20de\x20petenencias\x20en\x20residencia\x20privada','precio':0x1f4,'mesesPrision':0xa},{'numero':'7.5','descripcion':'Allamiento\x20de\x20morada\x20o\x20propiedad\x20privada','precio':0x15e,'mesesPrision':0xa},{'numero':'7.6','descripcion':'Robo\x20Mayor\x20(Pacific\x20Standard,\x20Laboratorios\x20Humane,\x20Casino,\x20Barco)','precio':0x7530,'mesesPrision':0x1e},{'numero':'7.7','descripcion':'Robo\x20Intermedio\x20(Ammunation,\x20Ponsonbys,\x20Fleeca)','precio':0x3a98,'mesesPrision':0x14},{'numero':'7.8','descripcion':'Robo\x20Menor\x20(Licoleria,\x20Badulake,\x20ATM,\x20Casas,\x20Tienda\x20de\x20Ropa,\x20Peluqueria,\x20Tatto,\x20Gasolinera,\x20Persona)','precio':0x1388,'mesesPrision':0xa}];globalThis['multas']=multas;export{multas};
+const multas = [
+    {
+        numero: '1.1',
+        descripcion: 'Uso excesivo del claxón',
+        precio: 100,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.2',
+        descripcion: 'Giro indebido',
+        precio: 50,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.3',
+        descripcion: 'Circular en sentido contrario',
+        precio: 150,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.4',
+        descripcion: 'Estacionar en zonas no habilitadas y obstruir la circulación',
+        precio: 150,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.5',
+        descripcion: 'Ignorar las señales de tránsito',
+        precio: 100,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.6',
+        descripcion: 'Saltarse un semáforo',
+        precio: 50,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.7',
+        descripcion: 'No ceder el paso a vehiculos de emergencia',
+        precio: 250,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.8',
+        descripcion: 'Realizar adelantamiento indebido',
+        precio: 100,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.9',
+        descripcion: 'Circular marcha atrás',
+        precio: 150,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.10',
+        descripcion: 'Ignorar señales de los agentes que regulan la circulación',
+        precio: 300,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.11',
+        descripcion: 'Saltarse / omitir un control de tráfico',
+        precio: 500,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.12',
+        descripcion: 'Conducir un vehiculo en malas condiciones',
+        precio: 150,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.13',
+        descripcion: 'Exceso de velocidad en vías urbanas',
+        precio: 250,
+        mesesPrision: 10
+    },
+    {
+        numero: '1.14',
+        descripcion: 'Conducción temeraria',
+        precio: 300,
+        mesesPrision: 10
+    },
+    {
+        numero: '1.15',
+        descripcion: 'Exceso de velocidad en vías secundarias',
+        precio: 250,
+        mesesPrision: 10
+    },
+    {
+        numero: '1.16',
+        descripcion: 'Conducir bajo los efectos de drogas/alcohol',
+        precio: 500,
+        mesesPrision: 10
+    },
+    {
+        numero: '1.17',
+        descripcion: 'Circular por zonas no habilitadas para ello',
+        precio: 350,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.18',
+        descripcion: 'Circular sin el casco con motocicleta',
+        precio: 100,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.18.1',
+        descripcion: 'Circular sin licencia de conducir',
+        precio: 500,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.19',
+        descripcion: 'Circular marcha atrás con el vehiculo',
+        precio: 500,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.20',
+        descripcion: 'Conducir sin papeles del coche',
+        precio: 500,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.21',
+        descripcion: 'Derrapar con la rueda del vehiculo en via pública',
+        precio: 500,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.22',
+        descripcion: 'Aparcar en doble fila',
+        precio: 200,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.23',
+        descripcion: 'Aparcar en Zona de Minusválidos',
+        precio: 500,
+        mesesPrision: 10
+    },
+    {
+        numero: '1.24',
+        descripcion: 'Chocarse contra un vehiculo aposta',
+        precio: 500,
+        mesesPrision: 0
+    },
+    {
+        numero: '1.25',
+        descripcion: 'No tener documentación (DNI)',
+        precio: 1000,
+        mesesPrision: 10
+    },
+    {
+        numero: '1.26',
+        descripcion: 'Atropellar a un civil',
+        precio: 1500,
+        mesesPrision: 15
+    },
+    {
+        numero: '2.1',
+        descripcion: 'Alteración del orden público',
+        precio: 700,
+        mesesPrision: 0
+    },
+    {
+        numero: '2.2',
+        descripcion: 'Racismo',
+        precio: 700,
+        mesesPrision: 0
+    },
+    {
+        numero: '2.3',
+        descripcion: 'Faltas de respeto a otro civil',
+        precio: 100,
+        mesesPrision: 0
+    },
+    {
+        numero: '2.4',
+        descripcion: 'Dañar mobiliario urbano (dependiendo de los daños)',
+        precio: 1000,
+        mesesPrision: 0
+    },
+    {
+        numero: '2.5',
+        descripcion: 'Acoso psicológico',
+        precio: 6000,
+        mesesPrision: 5
+    },
+    {
+        numero: '2.6',
+        descripcion: 'Amenaza de muerte a un civil',
+        precio: 1500,
+        mesesPrision: 5
+    },
+    {
+        numero: '2.7',
+        descripcion: 'Suplantación de identidad',
+        precio: 3000,
+        mesesPrision: 0
+    },
+    {
+        numero: '2.8',
+        descripcion: 'Circular por la vía pública con el rostro oculto',
+        precio: 700,
+        mesesPrision: 5
+    },
+    {
+        numero: '2.9',
+        descripcion: 'Circular en vía pública desnudo o semi-desnudo',
+        precio: 1000,
+        mesesPrision: 0
+    },
+    {
+        numero: '2.10',
+        descripcion: 'Circular en vían pública sin camiseta',
+        precio: 120,
+        mesesPrision: 0
+    },
+    {
+        numero: '2.11',
+        descripcion: 'Acoso sexual',
+        precio: 30000,
+        mesesPrision: 60
+    },
+    {
+        numero: '2.12',
+        descripcion: 'Violar una orden de alejamiento con sentendia firme',
+        precio: 25000,
+        mesesPrision: 40
+    },
+    {
+        numero: '2.13',
+        descripcion: 'Negativa a identificarse',
+        precio: 1000,
+        mesesPrision: 10
+    },
+    {
+        numero: '2.14',
+        descripcion: 'Obstrucción a la justicia',
+        precio: 2500,
+        mesesPrision: 10
+    },
+    {
+        numero: '2.15',
+        descripcion: 'Fraude o engaño',
+        precio: 3000,
+        mesesPrision: 10
+    },
+    {
+        numero: '3.1',
+        descripcion: 'Posesión de estupefacientes según cantidades: Consumo propio: Hasta 5 unidades. Más de 5 unidades se considera tráfico de drogas.',
+        precio: 0,
+        mesesPrision: 0
+    },
+    {
+        numero: '3.2',
+        descripcion: 'Posesión de estupefacientes (Marihuana / Metanfetamina / Cocaina / Hachís) 500 x unidad una vez superadas las 5 unidades',
+        precio: 500,
+        mesesPrision: 15
+    },
+    {
+        numero: '3.3',
+        descripcion: 'Retirada de estupefacientes de consumo propio en caso de que supere la cantidad reglamentada. Retirada de estupefacientes de consumo propio en caso de que supere la cantidad reglamentaria',
+        precio: 0,
+        mesesPrision: 0
+    },
+    {
+        numero: '3.4',
+        descripcion: 'Posesión de materia prima para la fabricación de drogas La materia prima usada para la fabricación de drogas serán penadas según la droga o arma que produzcan tal y como se indica en todos los precios de los articulos',
+        precio: 0,
+        mesesPrision: 0
+    },
+    {
+        numero: '3.5',
+        descripcion: 'Consumo de estupefacientes en vía pública',
+        precio: 750,
+        mesesPrision: 0
+    },
+    {
+        numero: '3.6',
+        descripcion: 'Posesión de dinero negro según cantidades: Cat 1 --> 0 a 5.000€ = 1.500€ | Cat 2 --> 5.000 a 10.000€ = 3.000€ | Cat 3 --> 10.000 a INFINITO = 4.500€ + (500 x 1000€ de dinero negro)',
+        precio: 0,
+        mesesPrision: 0
+    },
+    {
+        numero: '4.1',
+        descripcion: 'Serán considerados como tal, las armas de fuego que no se consigan en una tienda autorizada. El mal uso de las armas de fuego letales conlleva una sanción equivalente a la del articulo 4.4 y la retirada de la licencia de armas',
+        precio: 0,
+        mesesPrision: 0
+    },
+    {
+        numero: '4.2',
+        descripcion: 'Queda totalmente prohibido, por parte de los civiles, portar una pistolera como atuendo de modo decorativo',
+        precio: 500,
+        mesesPrision: 0
+    },
+    {
+        numero: '4.3',
+        descripcion: 'Posesión de arma blanca: Son considerados como tal, aquellas armas de filo cortante que no se vendan legalmente. Armas blancas susceptibles de ser usados como arma ilegal: Cuchillo, Bate de besibol, Palo de Golf, Botella rota, Linterna, Machete...',
+        precio: 1500,
+        mesesPrision: 0
+    },
+    {
+        numero: '4.4',
+        descripcion: 'Portar pistola de bajo calibre',
+        precio: 3500,
+        mesesPrision: 10
+    },
+    {
+        numero: '4.5',
+        descripcion: 'Portar armas automáticas de bajo calibre / medio',
+        precio: 6000,
+        mesesPrision: 10
+    },
+    {
+        numero: '4.6',
+        descripcion: 'Portar armas automáticas de alto calibre',
+        precio: 15000,
+        mesesPrision: 15
+    },
+    {
+        numero: '4.7',
+        descripcion: 'Tráfico de armas',
+        precio: 15000,
+        mesesPrision: 25
+    },
+    {
+        numero: '4.8',
+        descripcion: 'Objetos: Podrán ser retiradas los objetos que el agente justifique que puedan o hayan sido utilizados para cometer delitos',
+        precio: 0,
+        mesesPrision: 0
+    },
+    {
+        numero: '4.9',
+        descripcion: 'Atentado terrorista',
+        precio: 100000,
+        mesesPrision: 120
+    },
+    {
+        numero: '4.10',
+        descripcion: 'Atentar contra la vida o integridad física de varias personas y/o funcionarios públicos mediante la organización armada de varios individuos',
+        precio: 100000,
+        mesesPrision: 240
+    },
+    {
+        numero: '4.11',
+        descripcion: 'Se considera ocupación ilegal de propiedad cualquier acción de ingresar o residir en una propiedad sin el consentimiento legal del propietario',
+        precio: 5000,
+        mesesPrision: 10
+    },
+    {
+        numero: '5.1',
+        descripcion: 'Agresión a otro individuo',
+        precio: 700,
+        mesesPrision: 10
+    },
+    {
+        numero: '5.2',
+        descripcion: 'Intento de agresión a civil',
+        precio: 500,
+        mesesPrision: 10
+    },
+    {
+        numero: '5.3',
+        descripcion: 'Intento de secuestro',
+        precio: 2500,
+        mesesPrision: 15
+    },
+    {
+        numero: '5.4',
+        descripcion: 'Secuestro a un individuo',
+        precio: 4000,
+        mesesPrision: 20
+    },
+    {
+        numero: '5.5',
+        descripcion: 'Intento de homicidio a un civil sin el uso de armas',
+        precio: 1500,
+        mesesPrision: 10
+    },
+    {
+        numero: '5.6',
+        descripcion: 'Intento de homicidio a un civil con uso de armas de cualquier índole',
+        precio: 3000,
+        mesesPrision: 20
+    },
+    {
+        numero: '5.7',
+        descripcion: 'Intento de homicidio a múltiples civiles sin el uso de armas',
+        precio: 3000,
+        mesesPrision: 15
+    },
+    {
+        numero: '5.8',
+        descripcion: 'Intento de homicidio a múltiples civiles con uso de armas de cualquier índole: 4000 por cada civil / 20 Meses no acumulables',
+        precio: 4000,
+        mesesPrision: 20
+    },
+    {
+        numero: '6.1',
+        descripcion: 'Amenazas, desobediencia e inultos: Tras la primera omisión de la orden de un funcionario de policía, se le pondrá acumular al reo el monto económico después del primer aviso por cada falta de respeto o desataco',
+        precio: 0,
+        mesesPrision: 0
+    },
+    {
+        numero: '6.2',
+        descripcion: 'Insultar a un funcionario pública (No acumluable más de 10 veces). Los meses tampoco son acumulativos',
+        precio: 400,
+        mesesPrision: 10
+    },
+    {
+        numero: '6.3',
+        descripcion: 'Agresión o amenaza de muerte a un funcionario (No acumulable más de 5 veces). Los meses tampoco son acumulativos',
+        precio: 2000,
+        mesesPrision: 15
+    },
+    {
+        numero: '6.4',
+        descripcion: 'Desacato',
+        precio: 700,
+        mesesPrision: 10
+    },
+    {
+        numero: '6.5',
+        descripcion: 'Resistirse al arresto',
+        precio: 800,
+        mesesPrision: 10
+    },
+    {
+        numero: '6.6',
+        descripcion: 'Huir de la justicia',
+        precio: 1000,
+        mesesPrision: 10
+    },
+    {
+        numero: '6.7',
+        descripcion: 'Falso testimonio',
+        precio: 500,
+        mesesPrision: 5
+    },
+    {
+        numero: '6.8',
+        descripcion: 'Usurpación de funciones públicas',
+        precio: 10000,
+        mesesPrision: 15
+    },
+    {
+        numero: '6.9',
+        descripcion: 'Secuestro a un funcionario público',
+        precio: 6000,
+        mesesPrision: 30
+    },
+    {
+        numero: '6.10',
+        descripcion: 'Amenazar a un funcionario público a mano armada',
+        precio: 4500,
+        mesesPrision: 20
+    },
+    {
+        numero: '6.11',
+        descripcion: 'Intento de homicidio a un funcionario público',
+        precio: 8500,
+        mesesPrision: 30
+    },
+    {
+        numero: '6.12',
+        descripcion: 'Homicidio a un funcionario',
+        precio: 25000,
+        mesesPrision: 40
+    },
+    {
+        numero: '6.13',
+        descripcion: 'Homicidio a múltiples funcionarios',
+        precio: 55000,
+        mesesPrision: 60
+    },
+    {
+        numero: '6.14',
+        descripcion: 'Robo de secretos de estado',
+        precio: 0,
+        mesesPrision: 240
+    },
+    {
+        numero: '6.15',
+        descripcion: 'Cada multa impagada se acumulará en la base de datos de la policía. Si se superan los 50.000€ impagados, la polcía podrá requisar bienes personales con tal de saldar las multas impagadas',
+        precio: 0,
+        mesesPrision: 0
+    },
+    {
+        numero: '6.16',
+        descripcion: 'Por no pagar la hipoteca de un establecimiento, la polcía podrá echar el cierre a negocios o viviendas. Se lo quedaría en ayuntamiento',
+        precio: 0,
+        mesesPrision: 0
+    },
+    {
+        numero: '7.1',
+        descripcion: 'Robo de vehiculo',
+        precio: 700,
+        mesesPrision: 10
+    },
+    {
+        numero: '7.2',
+        descripcion: 'Robo con intimidación a un civil',
+        precio: 1000,
+        mesesPrision: 10
+    },
+    {
+        numero: '7.3',
+        descripcion: 'Robo con violencia a un civil',
+        precio: 1200,
+        mesesPrision: 10
+    },
+    {
+        numero: '7.4',
+        descripcion: 'Robo de petenencias en residencia privada',
+        precio: 500,
+        mesesPrision: 10
+    },
+    {
+        numero: '7.5',
+        descripcion: 'Allamiento de morada o propiedad privada',
+        precio: 350,
+        mesesPrision: 10
+    },
+    {
+        numero: '7.6',
+        descripcion: 'Robo Mayor (Pacific Standard, Laboratorios Humane, Casino, Barco)',
+        precio: 30000,
+        mesesPrision: 30
+    },
+    {
+        numero: '7.7',
+        descripcion: 'Robo Intermedio (Ammunation, Ponsonbys, Fleeca)',
+        precio: 15000,
+        mesesPrision: 20
+    },
+    {
+        numero: '7.8',
+        descripcion: 'Robo Menor (Licoleria, Badulake, ATM, Casas, Tienda de Ropa, Peluqueria, Tatto, Gasolinera, Persona)',
+        precio: 5000,
+        mesesPrision: 10
+    }
+];
+
+export { multas };
