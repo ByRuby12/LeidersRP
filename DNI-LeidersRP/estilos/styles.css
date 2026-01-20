@@ -192,7 +192,7 @@ hr {
     background: white;
     border-radius: 16px;
     padding: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
     animation: fadeIn 0.8s ease-out 0.2s both;
 }
@@ -683,11 +683,11 @@ select.form-input {
 
     .header {
         padding: 25px 15px;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
     }
 
     .header h1 {
-        font-size: 28px;
+        font-size: 18px;
     }
 
     .header .subtitle {
@@ -867,5 +867,4 @@ select.form-input {
     .fields-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
 }
