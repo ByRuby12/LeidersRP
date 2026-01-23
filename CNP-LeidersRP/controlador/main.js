@@ -190,7 +190,7 @@ function showMainContent() {
     // Restaurar el HTML del panel PDA
     container.innerHTML = `
         <header class="header">
-            <h1>👮 PDA POLICIAL - LEIDERS RP</h1>
+            <h1>PDA POLICIAL DE LEIDERSRP</h1>
         </header>
 
         <div class="search-container">
@@ -236,7 +236,7 @@ async function loadZones() {
             zoneElement.classList.add('zone');
             const zoneHeader = document.createElement('div');
             zoneHeader.classList.add('zone-header');
-            zoneHeader.innerHTML = `<p class="zone-name">PlayStation: ${zoneData.name}</p><img src="./img/user.png" class="edit-zone-btn">`;
+            zoneHeader.innerHTML = `<p class="zone-name">ID: ${zoneData.name}</p><img src="./img/user.png" class="edit-zone-btn">`;
             zoneElement.appendChild(zoneHeader);
 
 /*------------------------------------------------------------------------------------*/
