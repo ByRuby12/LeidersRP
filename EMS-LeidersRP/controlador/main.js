@@ -187,13 +187,13 @@ function showMainContent() {
     
     // Restaurar el HTML original
     container.innerHTML = `
-        <h1>🚑 PDA EMS - LEIDERS RP</h1>
+        <h1>PDA EMS DE LEIDERSRP</h1>
 
         <div class="search-container">
             <input 
                 type="text" 
                 id="searchInputUser" 
-                placeholder="🔍 Buscar paciente por nombre..." 
+                placeholder="🔍 Buscar por nombre de Usuario..." 
                 class="search-input"
                 autocomplete="off"
             >
@@ -274,7 +274,7 @@ async function loadZones() {
             
             const zoneHeader = document.createElement('div');
             zoneHeader.classList.add('zone-header');
-            zoneHeader.innerHTML = `<p class="zone-name">PlayStation: ${zoneData.name}</p><img src="./img/user.png" class="edit-zone-btn">`;
+            zoneHeader.innerHTML = `<p class="zone-name">ID: ${zoneData.name}</p><img src="./img/user.png" class="edit-zone-btn">`;
             zoneElement.appendChild(zoneHeader);
 
             // ===== DATOS =====
